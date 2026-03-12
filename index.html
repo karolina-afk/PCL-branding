@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>People Centric Leadership - Brand Exploration</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Serif+Display&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --bg: #F5F0E8;
+      --nav-bg: #FFFFFF;
+      --nav-text: #1B2A4A;
+      --primary-text: #2D2D2D;
+      --muted-text: #5C6B7A;
+      --headings: #1B2A4A;
+      --accent: #C8913A;
+      --secondary-accent: #2A6B6B;
+      --borders: rgba(27, 42, 74, 0.15);
+      --shadows: rgba(27, 42, 74, 0.04);
+      --btn-bg: #1B2A4A;
+      --btn-text: #F5F0E8;
+      --btn-hover-bg: #C8913A;
+      --btn-hover-text: #1B2A4A;
+      --section-label: #A67329;
+      --card-bg: #FFFFFF;
+      --card-text: #2D2D2D;
+      --card-muted-text: #5C6B7A;
+      --card-heading: #1B2A4A;
+      --card-border: rgba(27, 42, 74, 0.08);
+      --sparse-accent: #8B3A3A;
+      --selection-bg: rgba(200, 145, 58, 0.3);
+      
+      --alt-bg-1: #FFFFFF;
+      --alt-card-bg-1: #F5F0E8;
+      --alt-bg-2: #FFFFFF;
+      --alt-card-bg-2: #F5F0E8;
+      --alt-text: #2D2D2D;
+      --alt-muted-text: #5C6B7A;
+      --alt-headings: #1B2A4A;
+      --alt-borders: rgba(27, 42, 74, 0.12);
+      --alt-section-label: #A67329;
+
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Source Serif 4', serif;
+
+      --theme-shadow: 0 25px 50px -12px var(--shadows), 0 10px 20px -8px var(--shadows);
+      --card-shadow: 0 10px 30px -5px var(--shadows);
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--primary-text);
+      font-family: var(--font-body);
+      transition: background-color 0.7s, color 0.7s;
+    }
+
+    ::selection {
+      background-color: var(--selection-bg);
+      color: var(--headings);
+    }
+
+    .theme-btn-primary {
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      border: 1px solid var(--btn-bg);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .theme-btn-primary:hover {
+      background-color: var(--btn-hover-bg);
+      color: var(--btn-hover-text);
+      border-color: var(--btn-hover-bg);
+      transform: translateY(-3px);
+      box-shadow: var(--theme-shadow);
+    }
+    .theme-btn-outline {
+      border-color: var(--btn-bg);
+      color: var(--btn-bg);
+      background-color: transparent;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .theme-btn-outline:hover {
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      transform: translateY(-3px);
+      box-shadow: var(--theme-shadow);
+    }
+
+    .dynamic-shadow { box-shadow: var(--theme-shadow); }
+    .card-shadow { box-shadow: var(--card-shadow); }
+    
+    .smooth-lift {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .smooth-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--theme-shadow);
+    }
+    
+    .img-zoom-hover img { transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .img-zoom-hover:hover img { transform: scale(1.05); }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--borders); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--muted-text); }
+
+    .bg-theme-nav { background-color: var(--nav-bg); }
+    .bg-theme-bg { background-color: var(--bg); }
+    .bg-theme-card { background-color: var(--card-bg); }
+    .bg-alt-bg1 { background-color: var(--alt-bg-1); }
+    .bg-alt-card1 { background-color: var(--alt-card-bg-1); }
+    .bg-alt-bg2 { background-color: var(--alt-bg-2); }
+    .bg-alt-card2 { background-color: var(--alt-card-bg-2); }
+    
+    .text-theme-nav { color: var(--nav-text); }
+    .text-theme-headings { color: var(--headings); font-family: var(--font-heading); }
+    .text-theme-accent { color: var(--accent); }
+    .text-theme-muted { color: var(--muted-text); }
+    .text-theme-primary { color: var(--primary-text); }
+    .text-theme-section { color: var(--section-label); }
+    
+    .text-alt-headings { color: var(--alt-headings); font-family: var(--font-heading); }
+    .text-alt-primary { color: var(--alt-text); }
+    .text-alt-muted { color: var(--alt-muted-text); }
+    .text-alt-section { color: var(--alt-section-label); }
+
+    .border-theme-main { border-color: var(--borders); }
+    .border-theme-card { border-color: var(--card-border); }
+    .border-alt-main { border-color: var(--alt-borders); }
+
+    .ctrl-btn { color: #1B2A4A; background-color: transparent; font-family: 'Playfair Display', serif; }
+    .ctrl-btn.active { background-color: #C8913A; color: #1B2A4A; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transform: scale(1.1); }
+    
+    .font-preview { border-color: var(--alt-borders); transition: all 0.7s; }
+    .font-preview.active { background-color: var(--alt-card-bg-1); opacity: 1; transform: scale(1); filter: grayscale(0); box-shadow: var(--card-shadow); }
+    .font-preview.inactive { background-color: transparent; opacity: 0.4; transform: scale(0.98); filter: grayscale(0.8); }
+    .font-preview.inactive:hover { opacity: 1; filter: grayscale(0); }
+  </style>
+</head>
+<body class="min-h-screen overflow-x-hidden antialiased relative">
+
+  <nav class="fixed top-0 w-full z-40 transition-colors duration-700 border-b dynamic-shadow bg-theme-nav border-theme-main">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center h-28 md:h-36">
+      <div class="flex items-center space-x-6 md:space-x-8">
+        <img id="nav-logo" src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Adobe%20Express%20-%20file%20(3).png" alt="People Centric Leadership Logo" class="h-20 md:h-28 w-auto object-contain transition-all duration-700" />
+        <div class="leading-[1.1] transition-all duration-700 text-theme-nav text-theme-headings font-sans">
+          <div class="text-2xl md:text-4xl font-semibold tracking-tight">People Centric</div>
+          <div class="text-xl md:text-3xl font-medium opacity-90 mt-1" style="font-family: var(--font-body)">Leadership</div>
+        </div>
+      </div>
+      <div class="hidden lg:flex items-center space-x-12 font-bold text-xs uppercase tracking-widest text-theme-nav">
+        <a href="#" class="hover:opacity-60 transition-opacity">Home</a>
+        <a href="#" class="hover:opacity-60 transition-opacity">About Us</a>
+        <a href="#" class="hover:opacity-60 transition-opacity text-theme-accent">Project McCallion</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="fixed bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-50 transition-all duration-700 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)] rounded-full w-max max-w-[95vw] overflow-x-auto no-scrollbar border" style="border-color: #D9D3C7">
+    <div class="flex items-center space-x-5 md:space-x-8 px-6 md:px-10 py-3 md:py-4 rounded-full backdrop-blur-xl" style="background-color: rgba(240, 235, 225, 0.95); color: #1B2A4A;">
+      <div class="flex items-center space-x-3 md:space-x-4 shrink-0">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #C8913A"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+        <span class="font-bold text-sm md:text-base tracking-widest uppercase" style="font-family: 'Playfair Display', serif">Brand Controls</span>
+      </div>
+      <div class="w-px h-6 opacity-20 shrink-0" style="background-color: #1B2A4A"></div>
+      <div class="flex items-center space-x-3 md:space-x-4 shrink-0">
+        <span class="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold opacity-60">Color</span>
+        <div class="flex items-center space-x-1 md:space-x-2">
+          <button onclick="setTheme('light')" id="btn-bg-light" class="ctrl-btn active w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300">A</button>
+          <button onclick="setTheme('dark')" id="btn-bg-dark" class="ctrl-btn w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300">B</button>
+          <button onclick="setTheme('accent')" id="btn-bg-accent" class="ctrl-btn w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300">C</button>
+        </div>
+      </div>
+      <div class="w-px h-6 opacity-20 shrink-0" style="background-color: #1B2A4A"></div>
+      <div class="flex items-center space-x-3 md:space-x-4 shrink-0">
+        <span class="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold opacity-60">Type</span>
+        <div class="flex items-center space-x-1 md:space-x-2">
+          <button onclick="setFont('A')" id="btn-font-A" class="ctrl-btn active w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300">A</button>
+          <button onclick="setFont('B')" id="btn-font-B" class="ctrl-btn w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300">B</button>
+          <button onclick="setFont('C')" id="btn-font-C" class="ctrl-btn w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300">C</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-36 md:pt-48">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 pb-24 md:pb-40">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+        <div class="space-y-10 lg:col-span-6 pr-0 lg:pr-10">
+          <h1 id="hero-title" class="text-5xl md:text-7xl lg:text-[4.2rem] leading-[1.05] tracking-tight text-theme-headings">
+            Evidence that listens. <br/>
+            <span class="text-theme-accent font-semibold">Leadership that connects.</span>
+          </h1>
+          <p class="text-xl md:text-2xl leading-relaxed font-light text-theme-muted">
+            We listen to what people truly value, share what they tell us without judgement, 
+            and equip leaders to connect with their people through credible evidence — openly, for good.
+          </p>
+          <div class="pt-8 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <button class="theme-btn-primary px-10 py-5 rounded-full flex items-center space-x-3 text-xs uppercase tracking-[0.15em] font-semibold w-full sm:w-auto justify-center">
+              <span>Explore Research</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+            <button class="theme-btn-outline px-10 py-5 rounded-full text-xs uppercase tracking-[0.15em] font-semibold border w-full sm:w-auto text-center">
+              Our Philosophy
+            </button>
+          </div>
+        </div>
+        <div class="lg:col-span-6 relative h-[500px] md:h-[750px] w-full rounded-[2.5rem] overflow-hidden dynamic-shadow">
+          <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_oviqmtoviqmtoviq.png" class="absolute inset-0 w-full h-full object-cover scale-105" />
+          <div class="absolute inset-0 mix-blend-multiply opacity-20" style="background-color: var(--secondary-accent)"></div>
+          <div class="absolute inset-0 opacity-10 mix-blend-overlay" style="background-color: var(--headings)"></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-32 md:py-40 border-b bg-alt-bg2 text-alt-primary border-alt-main">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+          <div class="lg:col-span-6">
+            <h4 class="text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-8 text-alt-section">03 Logotype</h4>
+            <h2 class="text-4xl md:text-6xl leading-[1.1] tracking-tight font-bold text-alt-headings">Visual Anchors</h2>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-10 rounded-[2.5rem] border smooth-lift bg-alt-card2 border-alt-main">
+            <div class="h-48 w-full rounded-2xl flex flex-col items-center justify-center mb-10 border overflow-hidden border-alt-main bg-white">
+              <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Adobe%20Express%20-%20file%20(3).png" alt="Concept A" class="w-full h-full object-contain p-4"/>
+            </div>
+            <h3 class="text-2xl font-medium mb-4 tracking-tight text-alt-headings">Concept A <br/><span class="text-theme-accent font-semibold">Compass Star</span></h3>
+            <p class="text-base leading-relaxed font-light mt-6 text-alt-muted">Three overlapping angular shapes representing the archetypes converging.</p>
+          </div>
+          <div class="p-10 rounded-[2.5rem] border smooth-lift bg-alt-card2 border-alt-main">
+            <div class="h-48 w-full rounded-2xl flex flex-col items-center justify-center mb-10 border overflow-hidden border-alt-main bg-white">
+              <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/ChatGPT%20Image%20Mar%2012%2C%202026%2C%2010_41_03%20PM.png" alt="Concept B" class="w-full h-full object-contain p-4"/>
+            </div>
+            <h3 class="text-2xl font-medium mb-4 tracking-tight text-alt-headings">Concept B <br/><span class="text-theme-accent font-semibold">Wind Lines</span></h3>
+            <p class="text-base leading-relaxed font-light mt-6 text-alt-muted">Three flowing, parallel lines evoking movement. Channels the resilient wind metaphor.</p>
+          </div>
+          <div class="p-10 rounded-[2.5rem] border smooth-lift bg-alt-card2 border-alt-main">
+            <div class="h-48 w-full rounded-2xl flex flex-col items-center justify-center mb-10 border overflow-hidden border-alt-main bg-white">
+              <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_3jfhe93jfhe93jfh.png" alt="Concept C" class="w-full h-full object-contain p-4"/>
+            </div>
+            <h3 class="text-2xl font-medium mb-4 tracking-tight text-alt-headings">Concept C <br/><span class="text-theme-accent font-semibold">Open Circle</span></h3>
+            <p class="text-base leading-relaxed font-light mt-6 text-alt-muted">A circle deliberately not closed, creating a sense of welcome.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </div>
+
+  <script>
+    // Palettes and Font configurations
+    const PALETTES = {
+      light: {
+        logo: "https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Adobe%20Express%20-%20file%20(3).png",
+        colors: {
+          background: "#F5F0E8", navBg: "#FFFFFF", navText: "#1B2A4A", primaryText: "#2D2D2D",
+          mutedText: "#5C6B7A", headings: "#1B2A4A", accent: "#C8913A", secondaryAccent: "#2A6B6B",
+          borders: "rgba(27, 42, 74, 0.15)", shadows: "rgba(27, 42, 74, 0.04)",
+          btnBg: "#1B2A4A", btnText: "#F5F0E8", btnHoverBg: "#C8913A", btnHoverText: "#1B2A4A",
+          sectionLabel: "#A67329", cardBg: "#FFFFFF", cardText: "#2D2D2D", cardMutedText: "#5C6B7A",
+          cardHeading: "#1B2A4A", cardBorder: "rgba(27, 42, 74, 0.08)", sparseAccent: "#8B3A3A",
+          selectionBg: "rgba(200, 145, 58, 0.3)", altBg1: "#FFFFFF", altCardBg1: "#F5F0E8",
+          altBg2: "#FFFFFF", altCardBg2: "#F5F0E8", altText: "#2D2D2D", altMutedText: "#5C6B7A",
+          altHeadings: "#1B2A4A", altBorders: "rgba(27, 42, 74, 0.12)", altSectionLabel: "#A67329"
+        }
+      },
+      dark: {
+        logo: "https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Adobe%20Express%20-%20file%20(3).png",
+        colors: {
+          background: "#16223C", navBg: "#FFFFFF", navText: "#16223C", primaryText: "#F5F0E8",
+          mutedText: "#9BA6B5", headings: "#FFFFFF", accent: "#F0A202", secondaryAccent: "#F5F0E8",
+          borders: "rgba(245, 240, 232, 0.15)", shadows: "rgba(0, 0, 0, 0.3)",
+          btnBg: "#F0A202", btnText: "#16223C", btnHoverBg: "#F5F0E8", btnHoverText: "#16223C",
+          sectionLabel: "#6C969D", cardBg: "#1D2B46", cardText: "#F5F0E8", cardMutedText: "#9BA6B5",
+          cardHeading: "#FFFFFF", cardBorder: "rgba(112, 141, 129, 0.4)", sparseAccent: "#197278",
+          selectionBg: "rgba(240, 162, 2, 0.3)", altBg1: "#FFFFFF", altCardBg1: "#F5F0E8",
+          altBg2: "#F5F0E8", altCardBg2: "#FFFFFF", altText: "#2D2D2D", altMutedText: "#5C6B7A",
+          altHeadings: "#1B2A4A", altBorders: "rgba(27, 42, 74, 0.12)", altSectionLabel: "#A67329"
+        }
+      },
+      accent: {
+        logo: "https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Untitled%20(1).png",
+        colors: {
+          background: "#07393C", navBg: "#FFFFFF", navText: "#07393C", primaryText: "#F0EDEE",
+          mutedText: "#8EBCBC", headings: "#FFFFFF", accent: "#F0A202", secondaryAccent: "#F5F0E8",
+          borders: "rgba(240, 237, 238, 0.15)", shadows: "rgba(0, 0, 0, 0.25)",
+          btnBg: "#F0A202", btnText: "#07393C", btnHoverBg: "#F0EDEE", btnHoverText: "#07393C",
+          sectionLabel: "#F0A202", cardBg: "#094347", cardText: "#F0EDEE", cardMutedText: "#8EBCBC",
+          cardHeading: "#FFFFFF", cardBorder: "rgba(240, 237, 238, 0.1)", sparseAccent: "#3FA2A2",
+          selectionBg: "rgba(240, 162, 2, 0.3)", altBg1: "#FFFFFF", altCardBg1: "#F5F0E8",
+          altBg2: "#F5F0E8", altCardBg2: "#FFFFFF", altText: "#2D2D2D", altMutedText: "#5C6B7A",
+          altHeadings: "#1B2A4A", altBorders: "rgba(27, 42, 74, 0.12)", altSectionLabel: "#A67329"
+        }
+      }
+    };
+
+    function setTheme(id) {
+      const theme = PALETTES[id];
+      const root = document.documentElement;
+      for (const [key, value] of Object.entries(theme.colors)) {
+        const cssKey = '--' + key.replace(/[A-Z]/g, m => "-" + m.toLowerCase());
+        root.style.setProperty(cssKey, value);
+      }
+      document.getElementById('nav-logo').src = theme.logo;
+      document.querySelectorAll('[id^="btn-bg-"]').forEach(b => b.classList.remove('active'));
+      document.getElementById(`btn-bg-${id}`).classList.add('active');
+    }
+
+    function setFont(id) {
+      const fonts = {
+        A: ["'Playfair Display', serif", "'Source Serif 4', serif"],
+        B: ["'DM Serif Display', serif", "'Libre Baskerville', serif"],
+        C: ["'Cormorant Garamond', serif", "'Lora', serif"]
+      };
+      const root = document.documentElement;
+      root.style.setProperty('--font-heading', fonts[id][0]);
+      root.style.setProperty('--font-body', fonts[id][1]);
+      document.querySelectorAll('[id^="btn-font-"]').forEach(b => b.classList.remove('active'));
+      document.getElementById(`btn-font-${id}`).classList.add('active');
+    }
+
+    // Default initialization
+    document.addEventListener("DOMContentLoaded", () => {
+      setTheme('light');
+      setFont('A');
+    });
+  </script>
+</body>
+</html>
