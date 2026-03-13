@@ -10,6 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    /* Base CSS Variables (Updated by JS) */
     :root {
       --bg: #F5F0E8;
       --nav-bg: #FFFFFF;
@@ -47,10 +48,12 @@
       --font-heading: 'Playfair Display', serif;
       --font-body: 'Source Serif 4', serif;
 
+      /* Static Variables calculated from dynamic ones */
       --theme-shadow: 0 25px 50px -12px var(--shadows), 0 10px 20px -8px var(--shadows);
       --card-shadow: 0 10px 30px -5px var(--shadows);
     }
 
+    /* Global Styles mapped to CSS Variables */
     body {
       background-color: var(--bg);
       color: var(--primary-text);
@@ -63,6 +66,7 @@
       color: var(--headings);
     }
 
+    /* Custom Utility Classes */
     .theme-btn-primary {
       background-color: var(--btn-bg);
       color: var(--btn-text);
@@ -111,33 +115,36 @@
     ::-webkit-scrollbar-thumb { background: var(--borders); border-radius: 10px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--muted-text); }
 
-    .bg-theme-nav { background-color: var(--nav-bg); }
-    .bg-theme-bg { background-color: var(--bg); }
-    .bg-theme-card { background-color: var(--card-bg); }
-    .bg-alt-bg1 { background-color: var(--alt-bg-1); }
-    .bg-alt-card1 { background-color: var(--alt-card-bg-1); }
-    .bg-alt-bg2 { background-color: var(--alt-bg-2); }
-    .bg-alt-card2 { background-color: var(--alt-card-bg-2); }
+    /* Helper classes for inline styles */
+    .bg-theme-bg { background-color: var(--bg); transition: background-color 0.7s; }
+    .bg-theme-nav { background-color: var(--nav-bg); transition: background-color 0.7s; }
+    .bg-theme-card { background-color: var(--card-bg); transition: background-color 0.7s; }
+    .bg-alt-bg1 { background-color: var(--alt-bg-1); transition: background-color 0.7s; }
+    .bg-alt-card1 { background-color: var(--alt-card-bg-1); transition: background-color 0.7s; }
+    .bg-alt-bg2 { background-color: var(--alt-bg-2); transition: background-color 0.7s; }
+    .bg-alt-card2 { background-color: var(--alt-card-bg-2); transition: background-color 0.7s; }
     
-    .text-theme-nav { color: var(--nav-text); }
-    .text-theme-headings { color: var(--headings); font-family: var(--font-heading); }
-    .text-theme-accent { color: var(--accent); }
-    .text-theme-muted { color: var(--muted-text); }
-    .text-theme-primary { color: var(--primary-text); }
-    .text-theme-section { color: var(--section-label); }
+    .text-theme-primary { color: var(--primary-text); transition: color 0.7s; }
+    .text-theme-muted { color: var(--muted-text); transition: color 0.7s; }
+    .text-theme-nav { color: var(--nav-text); transition: color 0.7s; }
+    .text-theme-headings { color: var(--headings); font-family: var(--font-heading); transition: color 0.7s, font-family 0.7s; }
+    .text-theme-accent { color: var(--accent); transition: color 0.7s; }
+    .text-theme-section { color: var(--section-label); transition: color 0.7s; }
     
-    .text-alt-headings { color: var(--alt-headings); font-family: var(--font-heading); }
-    .text-alt-primary { color: var(--alt-text); }
-    .text-alt-muted { color: var(--alt-muted-text); }
-    .text-alt-section { color: var(--alt-section-label); }
+    .text-alt-primary { color: var(--alt-text); transition: color 0.7s; }
+    .text-alt-muted { color: var(--alt-muted-text); transition: color 0.7s; }
+    .text-alt-headings { color: var(--alt-headings); font-family: var(--font-heading); transition: color 0.7s, font-family 0.7s; }
+    .text-alt-section { color: var(--alt-section-label); transition: color 0.7s; }
 
-    .border-theme-main { border-color: var(--borders); }
-    .border-theme-card { border-color: var(--card-border); }
-    .border-alt-main { border-color: var(--alt-borders); }
+    .border-theme-main { border-color: var(--borders); transition: border-color 0.7s; }
+    .border-theme-card { border-color: var(--card-border); transition: border-color 0.7s; }
+    .border-alt-main { border-color: var(--alt-borders); transition: border-color 0.7s; }
 
+    /* Active States for Controls */
     .ctrl-btn { color: #1B2A4A; background-color: transparent; font-family: 'Playfair Display', serif; }
     .ctrl-btn.active { background-color: #C8913A; color: #1B2A4A; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transform: scale(1.1); }
     
+    /* Font Section States */
     .font-preview { border-color: var(--alt-borders); transition: all 0.7s; }
     .font-preview.active { background-color: var(--alt-card-bg-1); opacity: 1; transform: scale(1); filter: grayscale(0); box-shadow: var(--card-shadow); }
     .font-preview.inactive { background-color: transparent; opacity: 0.4; transform: scale(0.98); filter: grayscale(0.8); }
@@ -152,7 +159,7 @@
         <img id="nav-logo" src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Adobe%20Express%20-%20file%20(3).png" alt="People Centric Leadership Logo" class="h-20 md:h-28 w-auto object-contain transition-all duration-700" />
         <div class="leading-[1.1] transition-all duration-700 text-theme-nav text-theme-headings font-sans">
           <div class="text-2xl md:text-4xl font-semibold tracking-tight">People Centric</div>
-          <div class="text-xl md:text-3xl font-medium opacity-90 mt-1" style="font-family: var(--font-body)">Leadership</div>
+          <div class="text-xl md:text-3xl font-medium opacity-90 mt-1 text-sans" style="font-family: var(--font-body)">Leadership</div>
         </div>
       </div>
       <div class="hidden lg:flex items-center space-x-12 font-bold text-xs uppercase tracking-widest text-theme-nav">
@@ -169,36 +176,41 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #C8913A"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
         <span class="font-bold text-sm md:text-base tracking-widest uppercase" style="font-family: 'Playfair Display', serif">Brand Controls</span>
       </div>
+
       <div class="w-px h-6 opacity-20 shrink-0" style="background-color: #1B2A4A"></div>
+
       <div class="flex items-center space-x-3 md:space-x-4 shrink-0">
         <span class="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold opacity-60">Color</span>
         <div class="flex items-center space-x-1 md:space-x-2">
-          <button onclick="setTheme('light')" id="btn-bg-light" class="ctrl-btn active w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300">A</button>
-          <button onclick="setTheme('dark')" id="btn-bg-dark" class="ctrl-btn w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300">B</button>
-          <button onclick="setTheme('accent')" id="btn-bg-accent" class="ctrl-btn w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300">C</button>
+          <button onclick="setTheme('light')" id="btn-bg-light" class="ctrl-btn active w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-105">A</button>
+          <button onclick="setTheme('dark')" id="btn-bg-dark" class="ctrl-btn w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-105">B</button>
+          <button onclick="setTheme('accent')" id="btn-bg-accent" class="ctrl-btn w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-105">C</button>
         </div>
       </div>
+
       <div class="w-px h-6 opacity-20 shrink-0" style="background-color: #1B2A4A"></div>
+
       <div class="flex items-center space-x-3 md:space-x-4 shrink-0">
         <span class="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold opacity-60">Type</span>
         <div class="flex items-center space-x-1 md:space-x-2">
-          <button onclick="setFont('A')" id="btn-font-A" class="ctrl-btn active w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300">A</button>
-          <button onclick="setFont('B')" id="btn-font-B" class="ctrl-btn w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300">B</button>
-          <button onclick="setFont('C')" id="btn-font-C" class="ctrl-btn w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300">C</button>
+          <button onclick="setFont('A')" id="btn-font-A" class="ctrl-btn active w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-105">A</button>
+          <button onclick="setFont('B')" id="btn-font-B" class="ctrl-btn w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-105">B</button>
+          <button onclick="setFont('C')" id="btn-font-C" class="ctrl-btn w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-base font-bold transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-105">C</button>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="pt-36 md:pt-48">
+  <div class="pt-36 md:pt-48 transition-opacity duration-700">
+
     <div class="max-w-7xl mx-auto px-6 lg:px-12 pb-24 md:pb-40">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
         <div class="space-y-10 lg:col-span-6 pr-0 lg:pr-10">
-          <h1 id="hero-title" class="text-5xl md:text-7xl lg:text-[4.2rem] leading-[1.05] tracking-tight text-theme-headings">
+          <h1 id="hero-title" class="text-5xl md:text-7xl lg:text-[4.2rem] leading-[1.05] transition-all duration-700 tracking-tight text-theme-headings">
             Evidence that listens. <br/>
             <span class="text-theme-accent font-semibold">Leadership that connects.</span>
           </h1>
-          <p class="text-xl md:text-2xl leading-relaxed font-light text-theme-muted">
+          <p class="text-xl md:text-2xl transition-colors duration-700 leading-relaxed font-light text-theme-muted">
             We listen to what people truly value, share what they tell us without judgement, 
             and equip leaders to connect with their people through credible evidence — openly, for good.
           </p>
@@ -212,15 +224,65 @@
             </button>
           </div>
         </div>
+        
         <div class="lg:col-span-6 relative h-[500px] md:h-[750px] w-full rounded-[2.5rem] overflow-hidden dynamic-shadow">
-          <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_oviqmtoviqmtoviq.png" class="absolute inset-0 w-full h-full object-cover scale-105" />
-          <div class="absolute inset-0 mix-blend-multiply opacity-20" style="background-color: var(--secondary-accent)"></div>
-          <div class="absolute inset-0 opacity-10 mix-blend-overlay" style="background-color: var(--headings)"></div>
+          <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_oviqmtoviqmtoviq.png" alt="Brand Flow Visual" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 scale-105" />
+          <div class="absolute inset-0 mix-blend-multiply opacity-20 transition-colors duration-700" style="background-color: var(--secondary-accent)"></div>
+          <div class="absolute inset-0 opacity-10 mix-blend-overlay transition-colors duration-700" style="background-color: var(--headings)"></div>
         </div>
       </div>
     </div>
 
-    <section class="py-32 md:py-40 border-b bg-alt-bg2 text-alt-primary border-alt-main">
+    <section class="py-32 md:py-40 transition-colors duration-700 border-y bg-alt-bg1 text-alt-primary border-alt-main">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="mb-16 md:mb-24 text-center">
+          <h4 class="text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-6 text-alt-section">01 Positioning</h4>
+          <h2 class="text-5xl md:text-7xl leading-[1.1] tracking-tight font-bold w-full text-alt-headings">Bridging the Gap</h2>
+        </div>
+        <div class="max-w-6xl mx-auto space-y-16">
+          <div class="w-full p-12 md:p-24 rounded-[2.5rem] text-center border card-shadow bg-alt-card1 border-alt-main">
+             <p class="mb-8 text-3xl md:text-5xl leading-[1.2] tracking-tight text-balance mx-auto max-w-4xl text-alt-headings">
+               "<span class="text-theme-accent font-semibold">How similar or different</span> do you think others' values are to yours?"
+             </p>
+             <p class="text-xl opacity-80 leading-relaxed font-light max-w-3xl mx-auto text-balance">
+               This is the unique research lens no other organisation is filling. It is where the most powerful insights for leaders emerge.
+             </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 text-xl leading-loose font-light max-w-5xl mx-auto">
+            <p>PCL occupies a distinctive space between academic values research — which often stays abstract and inaccessible — and commercial leadership consultancy — which often feels gimmicky or sales-driven.</p>
+            <div class="space-y-8">
+              <p>We bridge that gap with hands-on leadership experience, rigorous data partnerships, and a founding belief that research insights should be freely available, not locked behind paywalls.</p>
+              <p>PCL is the megaphone for people's voices, not the judge of their values. We share what people are saying and open up questions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 md:py-40 transition-colors duration-700 relative overflow-hidden border-b bg-theme-bg border-theme-main text-theme-primary">
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[120px] opacity-[0.03] translate-x-1/3 -translate-y-1/3" style="background-color: var(--headings)"></div>
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div class="text-center lg:text-left mb-16">
+          <h4 class="text-sm md:text-base font-bold uppercase tracking-[0.2em] text-theme-section">02 Brand Persona Shorthand</h4>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div class="aspect-[3/4] lg:aspect-[2/3] w-full rounded-[2.5rem] overflow-hidden card-shadow flex flex-col items-center justify-center border border-theme-main" style="background-color: #FFFFFF">
+             <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/that%2Bwas%2Ba%2Bbrave%2Bthing%2Bto%2Bsay.webp" alt="Charlie Mackesy Illustration" class="w-full h-full object-contain p-4 mix-blend-multiply" />
+          </div>
+          <div class="text-center lg:text-left">
+            <p class="text-5xl md:text-7xl leading-[1.1] mb-12 tracking-tight text-balance text-theme-headings">
+              What would <span class="text-theme-accent font-semibold">Charlie Mackesy</span> do?
+            </p>
+            <div class="w-20 h-1 mb-12 mx-auto lg:mx-0 transition-colors duration-700" style="background-color: var(--accent)"></div>
+            <p class="text-2xl md:text-3xl leading-relaxed font-light text-balance text-theme-muted">
+              Charlie connects to people's hearts with disarming simplicity. He makes the profound feel light. He meets complexity with warmth. He never performs, never oversells, and never takes an adversarial posture — even under pressure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 md:py-40 transition-colors duration-700 border-b bg-alt-bg2 text-alt-primary border-alt-main">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
           <div class="lg:col-span-6">
@@ -230,108 +292,454 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="p-10 rounded-[2.5rem] border smooth-lift bg-alt-card2 border-alt-main">
-            <div class="h-48 w-full rounded-2xl flex flex-col items-center justify-center mb-10 border overflow-hidden border-alt-main bg-white">
+            <div class="h-48 w-full rounded-2xl flex flex-col items-center justify-center mb-10 border overflow-hidden border-alt-main" style="background-color: #FFFFFF">
               <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Adobe%20Express%20-%20file%20(3).png" alt="Concept A" class="w-full h-full object-contain p-4"/>
             </div>
             <h3 class="text-2xl font-medium mb-4 tracking-tight text-alt-headings">Concept A <br/><span class="text-theme-accent font-semibold">Compass Star</span></h3>
-            <p class="text-base leading-relaxed font-light mt-6 text-alt-muted">Three overlapping angular shapes representing the archetypes converging.</p>
+            <p class="text-base leading-relaxed font-light mt-6 text-alt-muted">Three overlapping angular shapes representing the archetypes converging. The star is a covert reference to the Doherty heritage.</p>
           </div>
           <div class="p-10 rounded-[2.5rem] border smooth-lift bg-alt-card2 border-alt-main">
-            <div class="h-48 w-full rounded-2xl flex flex-col items-center justify-center mb-10 border overflow-hidden border-alt-main bg-white">
+            <div class="h-48 w-full rounded-2xl flex flex-col items-center justify-center mb-10 border overflow-hidden border-alt-main" style="background-color: #FFFFFF">
               <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/ChatGPT%20Image%20Mar%2012%2C%202026%2C%2010_41_03%20PM.png" alt="Concept B" class="w-full h-full object-contain p-4"/>
             </div>
             <h3 class="text-2xl font-medium mb-4 tracking-tight text-alt-headings">Concept B <br/><span class="text-theme-accent font-semibold">Wind Lines</span></h3>
-            <p class="text-base leading-relaxed font-light mt-6 text-alt-muted">Three flowing, parallel lines evoking movement. Channels the resilient wind metaphor.</p>
+            <p class="text-base leading-relaxed font-light mt-6 text-alt-muted">Three flowing, parallel lines evoking movement. Adaptable, impenetrable, always flowing — channels the resilient wind metaphor.</p>
           </div>
           <div class="p-10 rounded-[2.5rem] border smooth-lift bg-alt-card2 border-alt-main">
-            <div class="h-48 w-full rounded-2xl flex flex-col items-center justify-center mb-10 border overflow-hidden border-alt-main bg-white">
+            <div class="h-48 w-full rounded-2xl flex flex-col items-center justify-center mb-10 border overflow-hidden border-alt-main" style="background-color: #FFFFFF">
               <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_3jfhe93jfhe93jfh.png" alt="Concept C" class="w-full h-full object-contain p-4"/>
             </div>
             <h3 class="text-2xl font-medium mb-4 tracking-tight text-alt-headings">Concept C <br/><span class="text-theme-accent font-semibold">Open Circle</span></h3>
-            <p class="text-base leading-relaxed font-light mt-6 text-alt-muted">A circle deliberately not closed, creating a sense of welcome.</p>
+            <p class="text-base leading-relaxed font-light mt-6 text-alt-muted">A circle deliberately not closed, creating a sense of welcome. "There is room for you here." The mark of openness.</p>
           </div>
         </div>
       </div>
     </section>
 
-    </div>
+    <section class="py-32 md:py-40 transition-colors duration-700 border-b bg-theme-bg text-theme-primary border-theme-main">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+          <div class="lg:col-span-5">
+            <h4 class="text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-8 text-theme-section">04 Colour Palette</h4>
+            <h2 id="palette-name" class="text-4xl md:text-6xl leading-[1.1] mb-8 tracking-tight font-bold text-theme-headings">Background</h2>
+            <p id="palette-desc" class="text-xl opacity-80 font-light leading-relaxed text-theme-muted">Sharp contrast strokes with traditional editorial authority. Signals credibility and seriousness.</p>
+          </div>
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8" id="color-cards-container">
+            </div>
+        </div>
+        
+        <div class="border-t pt-20 border-theme-main">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+            <div class="md:col-span-5">
+               <h3 class="text-2xl font-medium tracking-tight mb-4 text-theme-headings">Secondary Accents</h3>
+               <p class="text-base font-light leading-relaxed opacity-80 max-w-sm text-theme-primary">Used sparingly to extend the range. They add depth without dominating the primary framework.</p>
+            </div>
+            <div class="md:col-span-7 flex flex-wrap gap-6 lg:gap-12">
+              <div class="flex items-center space-x-6 p-6 rounded-[2rem] border card-shadow bg-theme-card border-theme-card">
+                <div class="w-16 h-16 rounded-full border-2 border-theme-main" style="background-color: var(--secondary-accent)"></div>
+                <div class="pr-4">
+                  <p class="text-[10px] uppercase tracking-[0.2em] mb-1 font-bold" style="color: var(--card-muted-text)">Secondary</p>
+                  <p id="secondary-hex" class="font-medium uppercase tracking-wide" style="color: var(--card-heading)"></p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-6 p-6 rounded-[2rem] border card-shadow bg-theme-card border-theme-card">
+                <div class="w-16 h-16 rounded-full border-2 border-theme-main" style="background-color: var(--sparse-accent)"></div>
+                <div class="pr-4">
+                  <p class="text-[10px] uppercase tracking-[0.2em] mb-1 font-bold" style="color: var(--card-muted-text)">Sparse</p>
+                  <p id="sparse-hex" class="font-medium uppercase tracking-wide" style="color: var(--card-heading)"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 md:py-40 transition-colors duration-700 border-b relative overflow-hidden bg-alt-bg1 border-alt-main text-alt-primary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+          <div class="lg:col-span-6">
+            <h4 class="text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-8 text-alt-section">05 Typography</h4>
+            <h2 class="text-4xl md:text-6xl leading-[1.1] tracking-tight font-bold text-alt-headings">Editorial Poise</h2>
+          </div>
+        </div>
+
+        <div class="space-y-8" id="typography-container">
+          <div id="type-block-A" class="font-preview p-10 md:p-20 rounded-[2.5rem]">
+            <div class="mb-16 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b pb-10 border-alt-main">
+              <h3 class="text-2xl font-medium tracking-tight text-alt-headings">Option A: Measured Authority</h3>
+              <div class="active-badge px-5 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold" style="background-color: var(--accent); color: var(--btn-text);">Active Font</div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
+              <div class="lg:col-span-7">
+                <p class="text-5xl md:text-[5rem] leading-[1.05] tracking-tight text-balance text-alt-headings" style="font-family: 'Playfair Display', serif">
+                  Evidence that listens. <br/>
+                  <span class="text-theme-accent font-semibold">Leadership that connects.</span>
+                </p>
+              </div>
+              <div class="lg:col-span-5 space-y-10 flex flex-col justify-end">
+                <p class="text-xl md:text-2xl leading-relaxed font-light text-balance text-alt-primary" style="font-family: 'Source Serif 4', serif">
+                  When we understand what people truly value and how they perceive each other's values we unlock the conditions for better leadership, stronger teams, and a more harmonious society.
+                </p>
+                <div>
+                  <p class="text-[10px] uppercase tracking-[0.2em] font-bold mb-4 opacity-50 text-alt-primary">Profile</p>
+                  <p class="text-base font-light text-alt-primary">Sharp contrast strokes with traditional editorial authority. Signals credibility and seriousness.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="type-block-B" class="font-preview p-10 md:p-20 rounded-[2.5rem]">
+            <div class="mb-16 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b pb-10 border-alt-main">
+              <h3 class="text-2xl font-medium tracking-tight text-alt-headings">Option B: Quiet Conviction</h3>
+              <div class="active-badge hidden px-5 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold" style="background-color: var(--accent); color: var(--btn-text);">Active Font</div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
+              <div class="lg:col-span-7">
+                <p class="text-5xl md:text-[5rem] leading-[1.05] tracking-tight text-balance text-alt-headings" style="font-family: 'DM Serif Display', serif">
+                  Evidence that listens. <br/>
+                  <span class="text-theme-accent font-semibold">Leadership that connects.</span>
+                </p>
+              </div>
+              <div class="lg:col-span-5 space-y-10 flex flex-col justify-end">
+                <p class="text-xl md:text-2xl leading-relaxed font-light text-balance text-alt-primary" style="font-family: 'Libre Baskerville', serif">
+                  When we understand what people truly value and how they perceive each other's values we unlock the conditions for better leadership, stronger teams, and a more harmonious society.
+                </p>
+                <div>
+                  <p class="text-[10px] uppercase tracking-[0.2em] font-bold mb-4 opacity-50 text-alt-primary">Profile</p>
+                  <p class="text-base font-light text-alt-primary">Gentle, almost handcrafted quality. Channels the Charlie Mackesy warmth—making the profound feel light.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="type-block-C" class="font-preview p-10 md:p-20 rounded-[2.5rem]">
+            <div class="mb-16 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b pb-10 border-alt-main">
+              <h3 class="text-2xl font-medium tracking-tight text-alt-headings">Option C: Soulful Precision</h3>
+              <div class="active-badge hidden px-5 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold" style="background-color: var(--accent); color: var(--btn-text);">Active Font</div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
+              <div class="lg:col-span-7">
+                <p class="text-5xl md:text-[5rem] leading-[1.05] tracking-tight text-balance text-alt-headings" style="font-family: 'Cormorant Garamond', serif">
+                  Evidence that listens. <br/>
+                  <span class="text-theme-accent font-semibold">Leadership that connects.</span>
+                </p>
+              </div>
+              <div class="lg:col-span-5 space-y-10 flex flex-col justify-end">
+                <p class="text-xl md:text-2xl leading-relaxed font-light text-balance text-alt-primary" style="font-family: 'Lora', serif">
+                  When we understand what people truly value and how they perceive each other's values we unlock the conditions for better leadership, stronger teams, and a more harmonious society.
+                </p>
+                <div>
+                  <p class="text-[10px] uppercase tracking-[0.2em] font-bold mb-4 opacity-50 text-alt-primary">Profile</p>
+                  <p class="text-base font-light text-alt-primary">Tall, elegant proportions. Scholarly precision with a distinctly human touch.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 md:py-40 transition-colors duration-700 border-b bg-theme-bg border-theme-main text-theme-primary">
+      <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 max-w-7xl mx-auto">
+          <div class="lg:col-span-8">
+            <h4 class="text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-8 text-theme-section">06 Photography</h4>
+            <h2 class="text-4xl md:text-6xl leading-[1.1] tracking-tight mb-8 font-bold text-theme-headings">See the Whole Person</h2>
+            <p class="text-xl font-light leading-relaxed max-w-2xl text-theme-muted">
+              Candid and raw, with warmth and intention. Natural and directional lighting — golden-hour warmth, soft window light, or gentle overcast. Avoid flat lighting.
+            </p>
+          </div>
+        </div>
+        
+        <div class="flex flex-col md:flex-row gap-3 h-auto md:h-[1400px]">
+           <div class="flex flex-col gap-3 w-full md:w-1/3 h-[1400px] md:h-full">
+              <div class="w-full h-[40%] relative overflow-hidden group border img-zoom-hover bg-theme-card border-theme-main">
+                 <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/nathan-dumlao-EwaV3HjwmUo-unsplash.jpg" alt="Brand Context" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                 <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700"></div>
+              </div>
+              <div class="w-full h-[30%] relative overflow-hidden group border img-zoom-hover bg-theme-card border-theme-main">
+                 <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/casey-horner-OopzSWabsWE-unsplash.jpg" alt="Brand Context" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                 <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700"></div>
+              </div>
+              <div class="w-full h-[30%] relative overflow-hidden group border img-zoom-hover bg-theme-card border-theme-main">
+                 <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/doncoombez-221gj4iC8hk-unsplash.jpg" alt="Brand Context" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                 <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700"></div>
+              </div>
+           </div>
+
+           <div class="flex flex-col gap-3 w-full md:w-1/3 h-[1400px] md:h-full">
+              <div class="w-full h-[20%] relative overflow-hidden group border img-zoom-hover bg-theme-card border-theme-main">
+                 <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/erik-jan-leusink-uQN9KaPTeI4-unsplash.jpg" alt="Brand Context" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                 <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700"></div>
+              </div>
+              <div class="w-full h-[30%] relative overflow-hidden group border img-zoom-hover bg-theme-card border-theme-main">
+                 <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_2i266j2i266j2i26.png" alt="Brand Context" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                 <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700"></div>
+              </div>
+              <div class="w-full h-[25%] relative overflow-hidden group border img-zoom-hover bg-theme-card border-theme-main">
+                 <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_77skwy77skwy77sk.png" alt="Brand Context" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                 <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700"></div>
+              </div>
+              <div class="w-full h-[25%] relative overflow-hidden group border img-zoom-hover bg-theme-card border-theme-main">
+                 <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_7i0y257i0y257i0y.png" alt="Brand Context" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                 <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700"></div>
+              </div>
+           </div>
+
+           <div class="flex flex-col gap-3 w-full md:w-1/3 h-[1400px] md:h-full">
+              <div class="w-full h-[35%] relative overflow-hidden group border img-zoom-hover bg-theme-card border-theme-main">
+                 <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_eo8jq7eo8jq7eo8j.png" alt="Brand Context" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                 <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700"></div>
+              </div>
+              <div class="w-full h-[25%] relative overflow-hidden group border img-zoom-hover bg-theme-card border-theme-main">
+                 <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_bsiaeibsiaeibsia.png" alt="Brand Context" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                 <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700"></div>
+              </div>
+              <div class="w-full h-[40%] relative overflow-hidden group border img-zoom-hover bg-theme-card border-theme-main">
+                 <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_pa4q7cpa4q7cpa4q.png" alt="Brand Context" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                 <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700"></div>
+              </div>
+           </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="py-32 md:py-40 transition-colors duration-700 border-b bg-alt-bg2 text-alt-primary border-alt-main">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="mb-24 text-center">
+           <h4 class="text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-8 text-alt-section">07 Tone of Voice</h4>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-24 max-w-6xl mx-auto">
+           <div class="p-12 lg:p-16 rounded-[2.5rem] border card-shadow bg-alt-bg1 border-alt-main text-alt-primary">
+              <h3 class="text-3xl md:text-4xl font-medium tracking-tight mb-10 text-alt-headings">PCL Is</h3>
+              <ul class="space-y-6 text-xl font-light">
+                <li class="flex items-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4 mt-1 shrink-0 text-theme-accent"><path d="M20 6 9 17l-5-5"/></svg> Open, attentive, eager to resolve.</li>
+                <li class="flex items-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4 mt-1 shrink-0 text-theme-accent"><path d="M20 6 9 17l-5-5"/></svg> Purposeful, intentional, aligned with the core.</li>
+                <li class="flex items-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4 mt-1 shrink-0 text-theme-accent"><path d="M20 6 9 17l-5-5"/></svg> Aligned with personal values, human, straight-talking.</li>
+                <li class="flex items-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4 mt-1 shrink-0 text-theme-accent"><path d="M20 6 9 17l-5-5"/></svg> Humble, evidence-focused, down-to-earth, proud but human.</li>
+                <li class="flex items-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4 mt-1 shrink-0 text-theme-accent"><path d="M20 6 9 17l-5-5"/></svg> Driven by connection, morals, and values.</li>
+              </ul>
+           </div>
+           <div class="p-12 lg:p-16 rounded-[2.5rem] border bg-alt-card2 border-alt-main text-alt-muted">
+              <h3 class="text-3xl md:text-4xl font-medium tracking-tight mb-10 opacity-70 text-alt-muted text-alt-headings">PCL Is Not</h3>
+              <ul class="space-y-6 text-xl font-light">
+                <li class="flex items-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4 mt-1 shrink-0 opacity-60"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> Challenging, assuming it's right.</li>
+                <li class="flex items-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4 mt-1 shrink-0 opacity-60"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> Criticising, conflictual.</li>
+                <li class="flex items-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4 mt-1 shrink-0 opacity-60"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> Overselling, using buzzwords.</li>
+                <li class="flex items-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4 mt-1 shrink-0 opacity-60"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> Business-like for its own sake, egocentric.</li>
+                <li class="flex items-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4 mt-1 shrink-0 opacity-60"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> Adversarial, defensive, needing to win or explain itself.</li>
+              </ul>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-20 pb-32 md:pb-40 transition-colors duration-700 bg-theme-bg border-theme-main border-t">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center text-sm tracking-widest uppercase font-semibold text-theme-muted">
+        <p class="flex items-center w-full text-center sm:text-left justify-center sm:justify-start">
+          © 2026 People Centric <span class="opacity-40 ml-4 hidden sm:inline-block">|</span><span class="opacity-40 ml-4 font-normal hidden sm:inline-block">Confidential V 1.0</span>
+        </p>
+      </div>
+    </footer>
+
+  </div>
 
   <script>
-    // Palettes and Font configurations
+    // State Data 
+    const FONTS = {
+      A: {
+        id: 'A',
+        name: "Option A: Measured Authority",
+        heading: "'Playfair Display', serif",
+        body: "'Source Serif 4', serif",
+        description: "Sharp contrast strokes with traditional editorial authority. Signals credibility and seriousness."
+      },
+      B: {
+        id: 'B',
+        name: "Option B: Quiet Conviction",
+        heading: "'DM Serif Display', serif",
+        body: "'Libre Baskerville', serif",
+        description: "Gentle, almost handcrafted quality. Channels the Charlie Mackesy warmth—making the profound feel light."
+      },
+      C: {
+        id: 'C',
+        name: "Option C: Soulful Precision",
+        heading: "'Cormorant Garamond', serif",
+        body: "'Lora', serif",
+        description: "Tall, elegant proportions. Scholarly precision with a distinctly human touch."
+      }
+    };
+
     const PALETTES = {
       light: {
+        name: "Light Background",
         logo: "https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Adobe%20Express%20-%20file%20(3).png",
         colors: {
-          background: "#F5F0E8", navBg: "#FFFFFF", navText: "#1B2A4A", primaryText: "#2D2D2D",
-          mutedText: "#5C6B7A", headings: "#1B2A4A", accent: "#C8913A", secondaryAccent: "#2A6B6B",
-          borders: "rgba(27, 42, 74, 0.15)", shadows: "rgba(27, 42, 74, 0.04)",
-          btnBg: "#1B2A4A", btnText: "#F5F0E8", btnHoverBg: "#C8913A", btnHoverText: "#1B2A4A",
-          sectionLabel: "#A67329", cardBg: "#FFFFFF", cardText: "#2D2D2D", cardMutedText: "#5C6B7A",
-          cardHeading: "#1B2A4A", cardBorder: "rgba(27, 42, 74, 0.08)", sparseAccent: "#8B3A3A",
-          selectionBg: "rgba(200, 145, 58, 0.3)", altBg1: "#FFFFFF", altCardBg1: "#F5F0E8",
-          altBg2: "#FFFFFF", altCardBg2: "#F5F0E8", altText: "#2D2D2D", altMutedText: "#5C6B7A",
-          altHeadings: "#1B2A4A", altBorders: "rgba(27, 42, 74, 0.12)", altSectionLabel: "#A67329"
+          background: "#F5F0E8", navBg: "#FFFFFF", navText: "#1B2A4A",
+          primaryText: "#2D2D2D", mutedText: "#5C6B7A", headings: "#1B2A4A",
+          accent: "#C8913A", secondaryAccent: "#2A6B6B", borders: "rgba(27, 42, 74, 0.15)",
+          shadows: "rgba(27, 42, 74, 0.04)", btnBg: "#1B2A4A", btnText: "#F5F0E8",
+          btnHoverBg: "#C8913A", btnHoverText: "#1B2A4A", sectionLabel: "#A67329",
+          cardBg: "#FFFFFF", cardText: "#2D2D2D", cardMutedText: "#5C6B7A",
+          cardHeading: "#1B2A4A", cardBorder: "rgba(27, 42, 74, 0.08)",
+          sparseAccent: "#8B3A3A", selectionBg: "rgba(200, 145, 58, 0.3)",
+          altBg1: "#FFFFFF", altCardBg1: "#F5F0E8", altBg2: "#FFFFFF",
+          altCardBg2: "#F5F0E8", altText: "#2D2D2D", altMutedText: "#5C6B7A",
+          altHeadings: "#1B2A4A", altBorders: "rgba(27, 42, 74, 0.12)",
+          altSectionLabel: "#A67329"
         }
       },
       dark: {
+        name: "Dark Background",
         logo: "https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Adobe%20Express%20-%20file%20(3).png",
         colors: {
-          background: "#16223C", navBg: "#FFFFFF", navText: "#16223C", primaryText: "#F5F0E8",
-          mutedText: "#9BA6B5", headings: "#FFFFFF", accent: "#F0A202", secondaryAccent: "#F5F0E8",
-          borders: "rgba(245, 240, 232, 0.15)", shadows: "rgba(0, 0, 0, 0.3)",
-          btnBg: "#F0A202", btnText: "#16223C", btnHoverBg: "#F5F0E8", btnHoverText: "#16223C",
-          sectionLabel: "#6C969D", cardBg: "#1D2B46", cardText: "#F5F0E8", cardMutedText: "#9BA6B5",
-          cardHeading: "#FFFFFF", cardBorder: "rgba(112, 141, 129, 0.4)", sparseAccent: "#197278",
-          selectionBg: "rgba(240, 162, 2, 0.3)", altBg1: "#FFFFFF", altCardBg1: "#F5F0E8",
-          altBg2: "#F5F0E8", altCardBg2: "#FFFFFF", altText: "#2D2D2D", altMutedText: "#5C6B7A",
-          altHeadings: "#1B2A4A", altBorders: "rgba(27, 42, 74, 0.12)", altSectionLabel: "#A67329"
+          background: "#16223C", navBg: "#FFFFFF", navText: "#16223C",
+          primaryText: "#F5F0E8", mutedText: "#9BA6B5", headings: "#FFFFFF",
+          accent: "#F0A202", secondaryAccent: "#F5F0E8", borders: "rgba(245, 240, 232, 0.15)",
+          shadows: "rgba(0, 0, 0, 0.3)", btnBg: "#F0A202", btnText: "#16223C",
+          btnHoverBg: "#F5F0E8", btnHoverText: "#16223C", sectionLabel: "#6C969D",
+          cardBg: "#1D2B46", cardText: "#F5F0E8", cardMutedText: "#9BA6B5",
+          cardHeading: "#FFFFFF", cardBorder: "rgba(112, 141, 129, 0.4)",
+          sparseAccent: "#197278", selectionBg: "rgba(240, 162, 2, 0.3)",
+          altBg1: "#FFFFFF", altCardBg1: "#F5F0E8", altBg2: "#F5F0E8",
+          altCardBg2: "#FFFFFF", altText: "#2D2D2D", altMutedText: "#5C6B7A",
+          altHeadings: "#1B2A4A", altBorders: "rgba(27, 42, 74, 0.12)",
+          altSectionLabel: "#A67329"
         }
       },
       accent: {
+        name: "Accent Background",
         logo: "https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Untitled%20(1).png",
         colors: {
-          background: "#07393C", navBg: "#FFFFFF", navText: "#07393C", primaryText: "#F0EDEE",
-          mutedText: "#8EBCBC", headings: "#FFFFFF", accent: "#F0A202", secondaryAccent: "#F5F0E8",
-          borders: "rgba(240, 237, 238, 0.15)", shadows: "rgba(0, 0, 0, 0.25)",
-          btnBg: "#F0A202", btnText: "#07393C", btnHoverBg: "#F0EDEE", btnHoverText: "#07393C",
-          sectionLabel: "#F0A202", cardBg: "#094347", cardText: "#F0EDEE", cardMutedText: "#8EBCBC",
-          cardHeading: "#FFFFFF", cardBorder: "rgba(240, 237, 238, 0.1)", sparseAccent: "#3FA2A2",
-          selectionBg: "rgba(240, 162, 2, 0.3)", altBg1: "#FFFFFF", altCardBg1: "#F5F0E8",
-          altBg2: "#F5F0E8", altCardBg2: "#FFFFFF", altText: "#2D2D2D", altMutedText: "#5C6B7A",
-          altHeadings: "#1B2A4A", altBorders: "rgba(27, 42, 74, 0.12)", altSectionLabel: "#A67329"
+          background: "#07393C", navBg: "#FFFFFF", navText: "#07393C",
+          primaryText: "#F0EDEE", mutedText: "#8EBCBC", headings: "#FFFFFF",
+          accent: "#F0A202", secondaryAccent: "#F5F0E8", borders: "rgba(240, 237, 238, 0.15)",
+          shadows: "rgba(0, 0, 0, 0.25)", btnBg: "#F0A202", btnText: "#07393C",
+          btnHoverBg: "#F0EDEE", btnHoverText: "#07393C", sectionLabel: "#F0A202",
+          cardBg: "#094347", cardText: "#F0EDEE", cardMutedText: "#8EBCBC",
+          cardHeading: "#FFFFFF", cardBorder: "rgba(240, 237, 238, 0.1)",
+          sparseAccent: "#3FA2A2", selectionBg: "rgba(240, 162, 2, 0.3)",
+          altBg1: "#FFFFFF", altCardBg1: "#F5F0E8", altBg2: "#F5F0E8",
+          altCardBg2: "#FFFFFF", altText: "#2D2D2D", altMutedText: "#5C6B7A",
+          altHeadings: "#1B2A4A", altBorders: "rgba(27, 42, 74, 0.12)",
+          altSectionLabel: "#A67329"
         }
       }
     };
 
-    function setTheme(id) {
-      const theme = PALETTES[id];
-      const root = document.documentElement;
-      for (const [key, value] of Object.entries(theme.colors)) {
-        const cssKey = '--' + key.replace(/[A-Z]/g, m => "-" + m.toLowerCase());
-        root.style.setProperty(cssKey, value);
-      }
-      document.getElementById('nav-logo').src = theme.logo;
-      document.querySelectorAll('[id^="btn-bg-"]').forEach(b => b.classList.remove('active'));
-      document.getElementById(`btn-bg-${id}`).classList.add('active');
-    }
+    let activeBackground = 'light';
+    let activeFont = 'A';
 
-    function setFont(id) {
-      const fonts = {
-        A: ["'Playfair Display', serif", "'Source Serif 4', serif"],
-        B: ["'DM Serif Display', serif", "'Libre Baskerville', serif"],
-        C: ["'Cormorant Garamond', serif", "'Lora', serif"]
+    // Core Updating Functions
+    function setTheme(bgId) {
+      activeBackground = bgId;
+      const theme = PALETTES[bgId];
+      const root = document.documentElement;
+
+      // Update Native CSS Variables explicitly to match HTML classes
+      const cssVarMap = {
+        '--bg': theme.colors.background, '--nav-bg': theme.colors.navBg, '--nav-text': theme.colors.navText,
+        '--primary-text': theme.colors.primaryText, '--muted-text': theme.colors.mutedText, '--headings': theme.colors.headings,
+        '--accent': theme.colors.accent, '--secondary-accent': theme.colors.secondaryAccent, '--borders': theme.colors.borders,
+        '--shadows': theme.colors.shadows, '--btn-bg': theme.colors.btnBg, '--btn-text': theme.colors.btnText,
+        '--btn-hover-bg': theme.colors.btnHoverBg, '--btn-hover-text': theme.colors.btnHoverText, '--section-label': theme.colors.sectionLabel,
+        '--card-bg': theme.colors.cardBg, '--card-text': theme.colors.cardText, '--card-muted-text': theme.colors.cardMutedText,
+        '--card-heading': theme.colors.cardHeading, '--card-border': theme.colors.cardBorder !== 'transparent' ? theme.colors.cardBorder : theme.colors.borders,
+        '--sparse-accent': theme.colors.sparseAccent, '--selection-bg': theme.colors.selectionBg,
+        '--alt-bg-1': theme.colors.altBg1, '--alt-card-bg-1': theme.colors.altCardBg1, '--alt-bg-2': theme.colors.altBg2,
+        '--alt-card-bg-2': theme.colors.altCardBg2, '--alt-text': theme.colors.altText, '--alt-muted-text': theme.colors.altMutedText,
+        '--alt-headings': theme.colors.altHeadings, '--alt-borders': theme.colors.altBorders, '--alt-section-label': theme.colors.altSectionLabel
       };
-      const root = document.documentElement;
-      root.style.setProperty('--font-heading', fonts[id][0]);
-      root.style.setProperty('--font-body', fonts[id][1]);
-      document.querySelectorAll('[id^="btn-font-"]').forEach(b => b.classList.remove('active'));
-      document.getElementById(`btn-font-${id}`).classList.add('active');
+      
+      for (const [key, value] of Object.entries(cssVarMap)) {
+        root.style.setProperty(key, value);
+      }
+
+      // Update Nav Logo
+      document.getElementById('nav-logo').src = theme.logo;
+
+      // Update Text Fields in Palette Section
+      const displayName = theme.name.includes('-') ? theme.name.split('-')[1].trim() : theme.name;
+      document.getElementById('palette-name').innerText = displayName;
+      
+      const currentDesc = FONTS[activeFont].description; 
+      document.getElementById('palette-desc').innerText = currentDesc;
+
+      document.getElementById('secondary-hex').innerText = theme.colors.secondaryAccent;
+      document.getElementById('sparse-hex').innerText = theme.colors.sparseAccent;
+
+      // Re-render Dynamic Color Cards
+      const container = document.getElementById('color-cards-container');
+      container.innerHTML = '';
+      const targetKeys = ['background', 'headings', 'accent'];
+      
+      for(const [key, hex] of Object.entries(theme.colors)) {
+        if(targetKeys.includes(key)) {
+          const cardBorderColor = theme.colors.cardBorder !== 'transparent' ? theme.colors.cardBorder : theme.colors.borders;
+          container.innerHTML += `
+            <div class="flex flex-col group p-4 rounded-[2rem] border card-shadow" style="background-color: var(--card-bg); border-color: ${cardBorderColor}">
+              <div class="h-32 w-full rounded-2xl mb-6 transition-transform duration-700 cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.03] border-2" style="background-color: ${hex}; border-color: var(--borders)"></div>
+              <div class="px-2 pb-2">
+                <p class="text-[10px] uppercase tracking-[0.2em] mb-2 font-bold" style="color: var(--card-muted-text)">${key}</p>
+                <p class="font-medium text-lg tracking-wide uppercase" style="color: var(--card-heading)">${hex}</p>
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      // Update Active Button Classes
+      ['light', 'dark', 'accent'].forEach(id => {
+        const btn = document.getElementById(`btn-bg-${id}`);
+        if(id === bgId) { btn.classList.add('active'); btn.classList.remove('opacity-70'); }
+        else { btn.classList.remove('active'); btn.classList.add('opacity-70'); }
+      });
     }
 
-    // Default initialization
+    function setFont(fontId) {
+      activeFont = fontId;
+      const fontInfo = FONTS[fontId];
+      const root = document.documentElement;
+
+      // Update CSS Variables
+      root.style.setProperty('--font-heading', fontInfo.heading);
+      root.style.setProperty('--font-body', fontInfo.body);
+
+      // Specific tweak for the hero title size based on font C 
+      const heroTitle = document.getElementById('hero-title');
+      if(fontId === 'C') { heroTitle.classList.replace('lg:text-[4.2rem]', 'lg:text-[5rem]'); }
+      else { heroTitle.classList.replace('lg:text-[5rem]', 'lg:text-[4.2rem]'); }
+
+      // Update Palette description reference
+      document.getElementById('palette-desc').innerText = fontInfo.description;
+
+      // Update Active Classes for Typography Blocks
+      ['A', 'B', 'C'].forEach(id => {
+        const block = document.getElementById(`type-block-${id}`);
+        const badge = block.querySelector('.active-badge');
+        const btn = document.getElementById(`btn-font-${id}`);
+        
+        if (id === fontId) {
+          block.classList.replace('inactive', 'active');
+          badge.classList.remove('hidden');
+          btn.classList.add('active');
+          btn.classList.remove('opacity-70');
+        } else {
+          block.classList.replace('active', 'inactive');
+          badge.classList.add('hidden');
+          btn.classList.remove('active');
+          btn.classList.add('opacity-70');
+        }
+      });
+    }
+
+    // Initialize on load
     document.addEventListener("DOMContentLoaded", () => {
-      setTheme('light');
-      setFont('A');
+      // Set initial states to trigger rendering
+      setTheme(activeBackground);
+      setFont(activeFont);
     });
   </script>
 </body>
