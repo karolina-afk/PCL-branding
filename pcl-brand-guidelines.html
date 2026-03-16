@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCL Brand Guidelines</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        evergreen: '#132A13',
+                        parchment: '#EFE9E7',
+                        'muted-teal': '#6BA292',
+                        'golden-orange': '#E59500'
+                    },
+                    fontFamily: {
+                        display: ['"Cormorant Garamond"', 'serif'],
+                        body: ['"Lora"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom utilities for premium feel */
+        body { background-color: #d1d5db; /* Gray background on screen to show A4 page boundaries */ }
+        .fade-in { animation: fadeIn 1.5s ease-in-out; }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        /* A4 Landscape Print & Screen Formatting */
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+
+        .a4-section {
+            width: 297mm;
+            height: 210mm;
+            margin: 2rem auto;
+            background-color: #EFE9E7; /* Default parchment background */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .a4-section {
+                margin: 0 !important;
+                box-shadow: none !important;
+                width: 297mm !important;
+                height: 210mm !important;
+            }
+        }
+    </style>
+</head>
+<body class="font-body text-evergreen antialiased">
+    <!-- COVER PAGE -->
+    <header class="a4-section bg-evergreen text-parchment flex flex-col justify-between p-16">
+        <div class="fade-in mt-16 max-w-5xl z-10">
+            <h1 class="font-display text-6xl md:text-8xl lg:text-9xl font-semibold leading-none mb-6">People Centric<br>Leadership</h1>
+            <p class="font-display text-2xl md:text-4xl italic text-muted-teal">Evidence that listens. Leadership that connects.</p>
+        </div>
+        <div class="fade-in z-10 flex justify-between items-end border-t border-parchment/30 pt-8 mt-16">
+            <p class="font-body text-sm tracking-widest uppercase">Brand Guidelines</p>
+            <p class="font-body text-sm tracking-widest uppercase">Confidential Version 1.0</p>
+        </div>
+    </header>
+    <!-- PAGE 2: INTRODUCTION -->
+    <section class="a4-section p-16 flex flex-col justify-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-display text-5xl md:text-6xl text-evergreen mb-10 border-b-2 border-golden-orange pb-4 inline-block">Introduction</h2>
+
+            <div class="space-y-6 text-lg md:text-xl leading-relaxed text-evergreen/90 font-body">
+                <p class="font-bold">About This Document</p>
+                <p>People Centric Leadership (PCL) exists because too many organisations treat values as a tick-box exercise, too many leaders operate without credible evidence, and too many voices go unheard. This brand was founded on the conviction that when we understand what people truly value—and how they perceive each other's values—we unlock the conditions for better leadership, stronger teams, and a more harmonious society.</p>
+
+                <p>These guidelines capture our strategic identity. Every decision—from colour to copy, from typography to tone—is rooted in five personality traits that define this brand: grounded, soulful, precise, quietly courageous, and purposefully warm.</p>
+
+                <p class="text-xl md:text-2xl italic font-display text-muted-teal mt-8 border-l-4 border-golden-orange pl-6">"This is not a rigid rulebook. PCL is a brand built on openness and human connection. Use these guidelines as a compass, not a cage."</p>
+            </div>
+        </div>
+    </section>
+    <!-- PAGE 3: POSITIONING (HERO TEXT) -->
+    <section class="a4-section p-16 bg-muted-teal text-parchment flex flex-col justify-center items-center text-center">
+        <div class="max-w-6xl mx-auto z-10">
+            <p class="font-body text-sm tracking-widest uppercase mb-10 text-evergreen font-bold">Positioning</p>
+            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl leading-tight">
+                We listen to what people truly value,<br>
+                share what they tell us without<br>
+                judgement, and equip leaders to<br>
+                connect with their people through<br>
+                <span class="text-evergreen italic">credible evidence</span> — openly, for<br>
+                <span class="text-golden-orange">good.</span>
+            </h2>
+        </div>
+    </section>
+    <!-- PAGE 4: BRAND IDENTITY (3-COLUMN GRID) -->
+    <section class="a4-section p-16 flex flex-col justify-center">
+        <div class="max-w-7xl mx-auto w-full">
+            <h2 class="font-display text-5xl md:text-6xl text-evergreen mb-10 border-b border-evergreen/20 pb-4">PCL Brand Identity</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="border-t-2 border-evergreen pt-6">
+                    <h3 class="font-display text-3xl mb-4 font-semibold text-evergreen">Brand Personality</h3>
+                    <p class="font-body text-sm leading-relaxed text-evergreen/90">PCL carries the poise of a seasoned leader and the soul of a storyteller. Grounded, soulful, precise, quietly courageous, and purposefully warm — these five traits shape every interaction. The brand doesn't shout, oversell, or perform. It shows up fully, speaks with purpose, and always leaves room for others. Like wind, it adapts and flows through resistance with calm, grounded articulation rather than force.</p>
+                </div>
+                <div class="border-t-2 border-muted-teal pt-6">
+                    <h3 class="font-display text-3xl mb-4 font-semibold text-evergreen">Brand as a Product</h3>
+                    <p class="font-body text-sm leading-relaxed text-evergreen/90">PCL delivers freely accessible, evidence-first research reports and leadership insights that bridge the gap between abstract academic research and commercial consultancy. Its unique lens explores not just what people value, but how similar or different they believe others' values to be. Extended offerings include workshops, advisory sessions, sector-specific materials, and youth outreach tools. Every product is designed to make rigorous evidence feel accessible and human, never intimidating.</p>
+                </div>
+                <div class="border-t-2 border-golden-orange pt-6">
+                    <h3 class="font-display text-3xl mb-4 font-semibold text-evergreen">Brand as an Organisation</h3>
+                    <p class="font-body text-sm leading-relaxed text-evergreen/90">PCL is independent and self-funded, partnering only with organisations whose values align with its own. It operates across sectors and generations, proactively seeking new audiences rather than waiting for them to arrive. Founded on the conviction that research insights should be freely available, it serves as a megaphone for people's voices — never the judge of their values. PCL exists to unlock the conditions for better leadership, stronger teams, and a more harmonious society.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PAGE 5 & 6: BRAND MATRIX -->
+    <section class="a4-section p-16 bg-evergreen text-parchment flex flex-col justify-center">
+        <div class="max-w-7xl mx-auto w-full">
+            <h2 class="font-display text-5xl md:text-6xl mb-8 border-b border-parchment/30 pb-4">Brand Matrix</h2>
+
+            <div class="w-full">
+                <h3 class="font-body text-xs tracking-widest uppercase text-muted-teal mb-4">Core Identity</h3>
+                <table class="w-full text-left font-body">
+                    <thead>
+                        <tr class="border-b-2 border-muted-teal text-lg font-display">
+                            <th class="py-3 pr-4 w-1/4">Dimension</th>
+                            <th class="py-3 px-4 w-1/4">As Product</th>
+                            <th class="py-3 px-4 w-1/4">As Organisation</th>
+                            <th class="py-3 pl-4 w-1/4">Personality</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-base text-parchment/80 divide-y divide-parchment/10">
+                        <tr>
+                            <td class="py-3 pr-4 font-semibold text-parchment">Core</td>
+                            <td class="py-3 px-4">Freely accessible, evidence-first research reports and leadership insights.</td>
+                            <td class="py-3 px-4">Independent, self-funded, values-aligned partnerships only.</td>
+                            <td class="py-3 pl-4">Grounded warmth, quiet courage, purposeful restraint.</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 pr-4 font-semibold text-parchment">Extended</td>
+                            <td class="py-3 px-4">Workshops, advisory sessions, sector-specific materials, youth outreach tools.</td>
+                            <td class="py-3 px-4">Cross-sector, multi-generational reach, proactive audience-seeking.</td>
+                            <td class="py-3 pl-4">Soulful precision, humble authority, exploratory spirit.</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 pr-4 font-semibold text-parchment">Images & Symbols</td>
+                            <td class="py-3 px-4">Three heritage stars, the open circle, wind-flow motifs.</td>
+                            <td class="py-3 px-4">Warm photography, editorial typography, Golden Orange accents.</td>
+                            <td class="py-3 pl-4">Unposed authenticity, geometric with soft anchoring.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- SENSORY ATTRIBUTES -->
+    <section class="a4-section p-16 bg-evergreen text-parchment flex flex-col justify-center border-t border-parchment/10">
+        <div class="max-w-7xl mx-auto w-full">
+            <h2 class="font-display text-5xl md:text-6xl mb-8 border-b border-parchment/30 pb-4">Sensory Attributes</h2>
+
+            <div class="w-full">
+                <table class="w-full text-left font-body">
+                    <thead>
+                        <tr class="border-b-2 border-golden-orange text-lg font-display">
+                            <th class="py-3 pr-4 w-1/4">Dimension</th>
+                            <th class="py-3 px-4 w-1/4">Attribute 1</th>
+                            <th class="py-3 px-4 w-1/4">Attribute 2</th>
+                            <th class="py-3 pl-4 w-1/4">Attribute 3</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-base text-parchment/80 divide-y divide-parchment/10">
+                        <tr>
+                            <td class="py-3 pr-4 font-semibold text-parchment">Typography</td>
+                            <td class="py-3 px-4">Editorial serif authority <br><em class="text-muted-teal">(Cormorant Garamond)</em>.</td>
+                            <td class="py-3 px-4">Generous breathing space.</td>
+                            <td class="py-3 pl-4">Soulful, contemporary poise <br><em class="text-muted-teal">(Lora)</em>.</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 pr-4 font-semibold text-parchment">Colour</td>
+                            <td class="py-3 px-4">Evergreen (#132A13) grounds the warmth.</td>
+                            <td class="py-3 px-4">Parchment (#EFE9E7) provides breathing space.</td>
+                            <td class="py-3 pl-4">Golden Orange (#E59500) for quiet courage accents.</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 pr-4 font-semibold text-parchment">Photography</td>
+                            <td class="py-3 px-4">Candid, unposed authenticity.</td>
+                            <td class="py-3 px-4">Warm, golden-hour natural light.</td>
+                            <td class="py-3 pl-4">Real people in real settings; never staged.</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 pr-4 font-semibold text-parchment">Tone of Voice</td>
+                            <td class="py-3 px-4">Straight-talking, never gimmicky.</td>
+                            <td class="py-3 px-4">Evidence-led, human-first.</td>
+                            <td class="py-3 pl-4">Humble yet quietly assured.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION DIVIDER -->
+    <section class="a4-section bg-evergreen text-parchment flex flex-col justify-center items-center text-center">
+        <h1 class="font-display text-7xl md:text-9xl">Logotype</h1>
+    </section>
+    <!-- LOGOTYPE -->
+    <section class="a4-section p-16 flex flex-col justify-center">
+        <div class="max-w-6xl mx-auto w-full">
+
+            <div class="bg-evergreen py-12 px-16 text-center flex flex-col items-center justify-center mb-8 rounded-sm">
+                <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Untitled%20(3).png" alt="PCL Logo" class="w-32 h-32 object-contain mb-6">
+                <h1 class="font-display text-5xl md:text-6xl text-parchment tracking-wide">People Centric Leadership</h1>
+            </div>
+            <p class="font-body text-center text-base italic text-evergreen/70 max-w-2xl mx-auto mb-12">(PCL Master Logo consists of the brand mark and the wordmark "People Centric Leadership" set in Cormorant Garamond. They work together as a single unit.)</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="font-display text-3xl mb-6 text-evergreen">Logo Concepts</h3>
+                    <ul class="space-y-4 font-body text-base text-evergreen/80">
+                        <li><strong class="text-evergreen">The Compass Star:</strong> Three overlapping angular shapes forming a compass rose with an emergent star at centre.</li>
+                        <li><strong class="text-evergreen">The Wind Lines:</strong> Flowing, parallel curved lines sweeping left to right, evoking adaptable, kinetic movement.</li>
+                        <li><strong class="text-evergreen">The Open Circle:</strong> A circle deliberately not closed, conveying welcome and openness: <em>there is room for you here.</em></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-display text-3xl mb-6 text-evergreen">Exclusion Zones & Sizing</h3>
+                    <p class="font-body text-base text-evergreen/80 mb-6">To ensure legibility and standout, retain clear space around the logo equal to the height of the 'P' in the wordmark on all sides. Minimum digital width is 120px; minimum print width is 30mm.</p>
+                    <div class="flex gap-4 mb-4">
+                        <div class="w-1/2 p-4 bg-parchment border-2 border-evergreen text-evergreen text-center font-display text-lg">Standard</div>
+                        <div class="w-1/2 p-4 bg-evergreen text-parchment text-center font-display text-lg">Inverted</div>
+                    </div>
+                    <div class="w-full p-4 bg-muted-teal text-evergreen text-center font-display text-lg">Accent</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION DIVIDER -->
+    <section class="a4-section bg-muted-teal text-evergreen flex flex-col justify-center items-center text-center">
+        <h1 class="font-display text-7xl md:text-9xl">Colours</h1>
+    </section>
+    <!-- COLOURS -->
+    <section class="a4-section flex">
+        <div class="grid grid-cols-4 w-full h-full">
+
+            <div class="bg-evergreen p-10 flex flex-col justify-end text-parchment h-full group hover:px-12 transition-all duration-300">
+                <p class="font-body text-xs tracking-widest uppercase mb-2">Primary</p>
+                <h3 class="font-display text-3xl mb-2">Evergreen</h3>
+                <p class="font-body text-xl mb-6 opacity-70">#132A13</p>
+                <p class="font-body text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Usage: Primary headers, body text on light backgrounds, page backgrounds for formal communications. The mood is serious, assured, and deeply grounded.</p>
+            </div>
+            <div class="bg-parchment border-r border-evergreen/10 p-10 flex flex-col justify-end text-evergreen h-full group hover:px-12 transition-all duration-300">
+                <p class="font-body text-xs tracking-widest uppercase mb-2">Dominant Base</p>
+                <h3 class="font-display text-3xl mb-2">Parchment</h3>
+                <p class="font-body text-xl mb-6 opacity-70">#EFE9E7</p>
+                <p class="font-body text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Usage: Dominant background colour, breathing space, text on dark sections. Creates an open, approachable, and welcoming feel.</p>
+            </div>
+            <div class="bg-muted-teal p-10 flex flex-col justify-end text-evergreen h-full group hover:px-12 transition-all duration-300">
+                <p class="font-body text-xs tracking-widest uppercase mb-2">Secondary / Accent</p>
+                <h3 class="font-display text-3xl mb-2">Muted Teal</h3>
+                <p class="font-body text-xl mb-6 opacity-70">#6BA292</p>
+                <p class="font-body text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Usage: Secondary backgrounds, section dividers, hero sections. Brings the brand's curiosity and depth to the foreground.</p>
+            </div>
+            <div class="bg-golden-orange p-10 flex flex-col justify-end text-evergreen h-full group hover:px-12 transition-all duration-300">
+                <p class="font-body text-xs tracking-widest uppercase mb-2">Highlight</p>
+                <h3 class="font-display text-3xl mb-2">Golden Orange</h3>
+                <p class="font-body text-xl mb-6 opacity-70">#E59500</p>
+                <p class="font-body text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Usage: Accent highlights, buttons, key emphasis points, call-to-action elements. Represents courage and warmth.</p>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION DIVIDER -->
+    <section class="a4-section bg-golden-orange text-evergreen flex flex-col justify-center items-center text-center">
+        <h1 class="font-display text-7xl md:text-9xl">Typography & Copy</h1>
+    </section>
+    <!-- TYPOGRAPHY -->
+    <section class="a4-section p-16 flex flex-col justify-center">
+        <div class="max-w-7xl mx-auto w-full space-y-12">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center border-b border-evergreen/20 pb-10">
+                <div>
+                    <h2 class="font-body text-xs tracking-widest uppercase text-muted-teal mb-4">Primary / Display Font</h2>
+                    <h1 class="font-display text-8xl md:text-[8rem] text-evergreen leading-none mb-6">AaBb</h1>
+                    <p class="font-display text-3xl text-evergreen mb-4">Cormorant Garamond</p>
+                    <p class="font-display text-xl text-evergreen/70 tracking-widest break-all">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                    <p class="font-display text-xl text-evergreen/70 tracking-widest break-all">abcdefghijklmnopqrstuvwxyz</p>
+                    <p class="font-display text-xl text-evergreen/70 tracking-widest">0123456789</p>
+                </div>
+                <div>
+                    <h3 class="font-display text-3xl font-semibold mb-4">Why Cormorant Garamond?</h3>
+                    <p class="font-body text-lg text-evergreen/80 leading-relaxed">Tall, elegant proportions and fine detail. Chosen to express the Sage archetype through letterforms—scholarly precision with a distinctly human touch. Used exclusively for headlines, hero statements, and primary navigation.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="font-body text-xs tracking-widest uppercase text-golden-orange mb-4">Secondary / Body Font</h2>
+                    <h1 class="font-body text-7xl md:text-[7rem] text-evergreen leading-none mb-6">AaBb</h1>
+                    <p class="font-body text-3xl text-evergreen mb-4">Lora <span class="text-lg text-evergreen/50">(Regular/Medium)</span></p>
+                    <p class="font-body text-lg text-evergreen/70 tracking-widest break-all">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                    <p class="font-body text-lg text-evergreen/70 tracking-widest break-all">abcdefghijklmnopqrstuvwxyz</p>
+                    <p class="font-body text-lg text-evergreen/70 tracking-widest">0123456789</p>
+                </div>
+                <div>
+                    <h3 class="font-display text-3xl font-semibold mb-4">Why Lora?</h3>
+                    <p class="font-body text-lg text-evergreen/80 leading-relaxed">A contemporary serif with roots in calligraphy. Grounds the elegant Cormorant with a slightly sturdier, more modern body. Its brushed curves add subtle warmth to extended reading, balancing scholarship with soul. Used for all body copy and subtext.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- POSTER PAGE 1 -->
+    <section class="a4-section px-16 bg-evergreen flex flex-col justify-center relative">
+        <div class="max-w-6xl w-full mx-auto">
+            <h2 class="font-display text-5xl md:text-7xl text-parchment leading-tight mb-4">What your people believe might surprise you.</h2>
+            <h2 class="font-display text-5xl md:text-7xl text-golden-orange leading-tight font-bold">That's where we start.</h2>
+        </div>
+        <div class="absolute bottom-12 left-16">
+            <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Untitled%20(3).png" alt="PCL Logo" class="w-16 h-16 object-contain opacity-80">
+        </div>
+    </section>
+    <!-- POSTER PAGE 2 -->
+    <section class="a4-section px-16 bg-evergreen flex flex-col justify-center relative border-t border-parchment/10">
+        <div class="max-w-6xl w-full mx-auto">
+            <h2 class="font-display text-5xl md:text-7xl text-parchment leading-tight mb-4">Values aren't soft.</h2>
+            <h2 class="font-display text-5xl md:text-7xl text-golden-orange leading-tight font-bold">They're the most powerful data you're not using.</h2>
+        </div>
+        <div class="absolute bottom-12 left-16">
+            <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Untitled%20(3).png" alt="PCL Logo" class="w-16 h-16 object-contain opacity-80">
+        </div>
+    </section>
+    <!-- POSTER PAGE 3 -->
+    <section class="a4-section px-16 bg-evergreen flex flex-col justify-center relative border-t border-parchment/10">
+        <div class="max-w-7xl w-full mx-auto">
+            <h2 class="font-display text-5xl md:text-6xl text-parchment leading-tight mb-4">The gap between leaders and people is smaller than you think.</h2>
+            <h2 class="font-display text-5xl md:text-6xl text-golden-orange leading-tight font-bold">We measure it.</h2>
+        </div>
+        <div class="absolute bottom-12 left-16">
+            <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Untitled%20(3).png" alt="PCL Logo" class="w-16 h-16 object-contain opacity-80">
+        </div>
+    </section>
+    <!-- SECTION DIVIDER -->
+    <section class="a4-section bg-parchment text-evergreen flex flex-col justify-center items-center text-center">
+        <h1 class="font-display text-7xl md:text-9xl">Photography</h1>
+    </section>
+    <!-- PHOTOGRAPHY -->
+    <section class="a4-section p-16 flex flex-col justify-center border-t border-evergreen/10">
+        <div class="max-w-7xl mx-auto w-full space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="font-display text-3xl mb-4 text-evergreen font-semibold">See the Whole Person</h3>
+                    <p class="font-body text-base text-evergreen/80 leading-relaxed">Candid and raw, with warmth and intention. PCL photography should feel like a documentary filmmaker captured a genuine moment of connection. Subjects are real people in real settings—never actors in staged boardrooms.</p>
+                </div>
+                <div>
+                    <h3 class="font-display text-3xl mb-4 text-evergreen font-semibold">Lighting & Composition</h3>
+                    <p class="font-body text-base text-evergreen/80 leading-relaxed">Natural and directional—golden-hour warmth, soft window light, or gentle overcast. Avoid flat, even lighting. Shadows add depth and honesty. Balanced and symmetrical where possible, but never rigid. Leave breathing space.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 pt-4">
+                <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/casey-horner-OopzSWabsWE-unsplash.jpg" alt="PCL Brand Photography" class="w-full h-32 object-cover rounded-sm shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/doncoombez-221gj4iC8hk-unsplash.jpg" alt="PCL Brand Photography" class="w-full h-32 object-cover rounded-sm shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/nathan-dumlao-EwaV3HjwmUo-unsplash.jpg" alt="PCL Brand Photography" class="w-full h-32 object-cover rounded-sm shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_2i266j2i266j2i26.png" alt="PCL Brand Photography" class="w-full h-32 object-cover rounded-sm shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_77skwy77skwy77sk.png" alt="PCL Brand Photography" class="w-full h-32 object-cover rounded-sm shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_bsiaeibsiaeibsia.png" alt="PCL Brand Photography" class="w-full h-32 object-cover rounded-sm shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_e74p8se74p8se74p.png" alt="PCL Brand Photography" class="w-full h-32 object-cover rounded-sm shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_oviqmtoviqmtoviq.png" alt="PCL Brand Photography" class="w-full h-32 object-cover rounded-sm shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_pa4q7cpa4q7cpa4q.png" alt="PCL Brand Photography" class="w-full h-32 object-cover rounded-sm shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+            </div>
+        </div>
+    </section>
+    <!-- SECTION DIVIDER -->
+    <section class="a4-section bg-muted-teal text-parchment flex flex-col justify-center items-center text-center">
+        <h1 class="font-display text-6xl md:text-8xl lg:text-9xl px-4">Illustration &<br>Heritage Symbols</h1>
+    </section>
+    <!-- METAPHORS & SYMBOLS -->
+    <section class="a4-section p-16 flex flex-col justify-center">
+        <div class="max-w-6xl mx-auto w-full">
+
+            <div class="grid grid-cols-2 gap-16">
+
+                <!-- Left Column: Visual Metaphors -->
+                <div class="space-y-8">
+                    <h2 class="font-display text-4xl mb-8 text-evergreen border-b-2 border-muted-teal pb-4 inline-block">Visual Metaphors</h2>
+
+                    <div class="bg-muted-teal/10 p-8 rounded-lg border-l-4 border-muted-teal">
+                        <div class="flex items-center gap-4 mb-4 text-muted-teal">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            <h3 class="font-display text-2xl italic">Wind and flow</h3>
+                        </div>
+                        <p class="font-body text-sm text-evergreen/80 leading-relaxed">Movement through landscapes, fabric in breeze, canopies bending—something that adapts and flows cannot be stopped.</p>
+                    </div>
+
+                    <div class="bg-golden-orange/10 p-8 rounded-lg border-l-4 border-golden-orange">
+                        <div class="flex items-center gap-4 mb-4 text-golden-orange">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="1.5" stroke-dasharray="4 4"></circle></svg>
+                            <h3 class="font-display text-2xl italic">Open circles and gathering</h3>
+                        </div>
+                        <p class="font-body text-sm text-evergreen/80 leading-relaxed">People seated in circles, doorways and thresholds—reinforcing the commitment to never being a closed club.</p>
+                    </div>
+                </div>
+                <!-- Right Column: The Doherty Legacy -->
+                <div class="space-y-6">
+                    <h2 class="font-display text-4xl mb-2 text-evergreen border-b-2 border-evergreen pb-4 inline-block">The Doherty Legacy</h2>
+                    <p class="font-body text-sm uppercase tracking-widest text-muted-teal mb-6">Heritage Elements</p>
+                    <p class="font-body text-sm text-evergreen/90 mb-6 leading-relaxed">Our visual language carries symbols woven covertly throughout the brand identity:</p>
+
+                    <div class="space-y-6">
+                        <div class="bg-evergreen p-6 rounded-lg text-parchment shadow-md flex gap-6 items-center">
+                            <div class="flex flex-col gap-1 items-center text-golden-orange shrink-0">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <div class="flex gap-1">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-2xl mb-1">Three Stars</h3>
+                                <p class="font-body text-xs text-parchment/80 leading-relaxed">Denoting excellence, achievement, and noble aspirations. Appears as a recurring motif in the brand mark and as a compositional principle.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-golden-orange p-6 rounded-lg text-evergreen shadow-md flex gap-6 items-center">
+                            <div class="w-12 h-12 shrink-0 border-2 border-evergreen rounded-full flex justify-center items-center text-evergreen">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-2xl mb-1">The Stag</h3>
+                                <p class="font-body text-xs text-evergreen/90 leading-relaxed">Denoting courage, strength, and resilience. Expressed quietly through our Golden Orange accents, reserved for moments of real weight.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="font-display italic text-sm text-muted-teal mt-6 border-t border-evergreen/10 pt-4">
+                        "These references are intentionally subtle. They reward those who know the story without excluding those who don't."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION DIVIDER -->
+    <section class="a4-section bg-evergreen text-parchment flex flex-col justify-center items-center text-center">
+        <h1 class="font-display text-7xl md:text-9xl">In Practice</h1>
+    </section>
+    <!-- WEBSITE MOCKUP -->
+    <section class="a4-section p-16 flex flex-col justify-center border-t border-evergreen/10">
+        <div class="max-w-6xl mx-auto w-full">
+            <h2 class="font-display text-4xl mb-8 text-evergreen">Website Mockup</h2>
+
+            <div class="flex flex-row justify-center items-center gap-12 w-full mt-4">
+
+                <!-- Left Mockup -->
+                <div class="drop-shadow-2xl w-[320px]">
+                    <div class="bg-evergreen flex flex-col h-[520px] rounded-t-md [clip-path:polygon(0_0,100%_0,100%_96%,0_100%)]">
+                        <!-- Browser Chrome -->
+                        <div class="h-4 bg-[#e5e7eb] flex items-center px-3 gap-1.5 shrink-0">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+                        </div>
+
+                        <!-- Hero -->
+                        <div class="relative bg-evergreen px-6 py-10 h-[200px] flex flex-col justify-center shrink-0">
+                            <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_oviqmtoviqmtoviq.png" alt="Background Texture" class="absolute inset-0 w-full h-full object-cover opacity-40 grayscale mix-blend-overlay">
+                            <div class="relative z-10 mt-6">
+                                <h3 class="font-display text-xl text-golden-orange mb-1">Leadership Insights</h3>
+                                <h2 class="font-body text-3xl leading-tight font-bold text-parchment tracking-tight">Our approach<br>to connection</h2>
+                            </div>
+                        </div>
+                        <!-- Middle -->
+                        <div class="bg-muted-teal p-6 flex flex-col gap-6 shrink-0">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_ghaohlghaohlghao.png" alt="PCL Logo" class="w-5 h-5 object-contain mix-blend-multiply">
+                                    <h2 class="font-display text-lg font-bold text-evergreen tracking-wide leading-none">PCL</h2>
+                                </div>
+                                <ul class="flex gap-2.5 text-[0.35rem] font-bold uppercase tracking-widest text-evergreen">
+                                    <li>About</li><li>Services</li><li>Team</li><li>Contact</li>
+                                </ul>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-1/3">
+                                    <p class="font-bold text-[0.45rem] leading-relaxed text-evergreen">Evidence that listens.<br>Leadership that connects.</p>
+                                </div>
+                                <div class="w-2/3 grid grid-cols-2 gap-3 text-[0.35rem] leading-relaxed font-medium text-evergreen/90">
+                                    <p>People Centric Leadership (PCL) exists because too many organisations treat values as a tick-box exercise, without credible evidence.</p>
+                                    <p>We listen to what people truly value, share what they tell us without judgement, and equip leaders.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bottom -->
+                        <div class="bg-evergreen p-6 flex-1 flex gap-4">
+                            <div class="w-1/3">
+                                <h3 class="font-display text-xs text-golden-orange">Our research</h3>
+                            </div>
+                            <div class="w-2/3 flex flex-col gap-3">
+                                <!-- Mini Stat Cards -->
+                                <div class="flex gap-2">
+                                    <div class="flex-1 bg-parchment/10 h-8 rounded-sm border-l-2 border-muted-teal"></div>
+                                    <div class="flex-1 bg-parchment/10 h-8 rounded-sm border-l-2 border-golden-orange"></div>
+                                </div>
+                                <!-- Mini Bar Chart -->
+                                <div class="bg-parchment/5 p-2.5 rounded-sm space-y-2">
+                                    <div class="w-full h-1.5 bg-parchment/10 rounded-full overflow-hidden"><div class="w-[85%] h-full bg-muted-teal"></div></div>
+                                    <div class="w-full h-1.5 bg-parchment/10 rounded-full overflow-hidden"><div class="w-[62%] h-full bg-golden-orange"></div></div>
+                                    <div class="w-full h-1.5 bg-parchment/10 rounded-full overflow-hidden"><div class="w-[45%] h-full bg-parchment/60"></div></div>
+                                </div>
+                                <!-- Mini Graph -->
+                                <div class="bg-parchment/5 h-10 rounded-sm flex items-end gap-1 px-1.5 pb-1">
+                                    <div class="flex-1 bg-muted-teal/50 h-[30%] rounded-t-sm"></div>
+                                    <div class="flex-1 bg-muted-teal/50 h-[50%] rounded-t-sm"></div>
+                                    <div class="flex-1 bg-muted-teal/50 h-[40%] rounded-t-sm"></div>
+                                    <div class="flex-1 bg-muted-teal/50 h-[70%] rounded-t-sm"></div>
+                                    <div class="flex-1 bg-muted-teal h-[60%] rounded-t-sm"></div>
+                                    <div class="flex-1 bg-golden-orange h-[90%] rounded-t-sm"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Mockup -->
+                <div class="drop-shadow-2xl w-[320px]">
+                    <div class="bg-evergreen flex flex-col h-[520px] rounded-t-md [clip-path:polygon(0_0,100%_0,100%_100%,0_96%)]">
+                        <!-- Browser Chrome -->
+                        <div class="h-4 bg-[#e5e7eb] flex items-center px-3 gap-1.5 shrink-0">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+                        </div>
+
+                        <!-- Hero -->
+                        <div class="relative bg-evergreen px-6 py-10 h-[200px] flex flex-col justify-center shrink-0">
+                            <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/nathan-dumlao-EwaV3HjwmUo-unsplash.jpg" alt="Background Texture" class="absolute inset-0 w-full h-full object-cover opacity-40 grayscale mix-blend-overlay">
+                            <div class="relative z-10 mt-6">
+                                <h3 class="font-display text-xl text-golden-orange mb-1">Leadership Insights</h3>
+                                <h2 class="font-body text-3xl leading-tight font-bold text-parchment tracking-tight">Our approach<br>to connection</h2>
+                            </div>
+                        </div>
+                        <!-- Middle -->
+                        <div class="bg-muted-teal p-6 flex flex-col gap-6 shrink-0">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_ghaohlghaohlghao.png" alt="PCL Logo" class="w-5 h-5 object-contain mix-blend-multiply">
+                                    <h2 class="font-display text-lg font-bold text-evergreen tracking-wide leading-none">PCL</h2>
+                                </div>
+                                <ul class="flex gap-2.5 text-[0.35rem] font-bold uppercase tracking-widest text-evergreen">
+                                    <li>About</li><li>Services</li><li>Team</li><li>Contact</li>
+                                </ul>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-1/3">
+                                    <p class="font-bold text-[0.45rem] leading-relaxed text-evergreen">Evidence that listens.<br>Leadership that connects.</p>
+                                </div>
+                                <div class="w-2/3 grid grid-cols-2 gap-3 text-[0.35rem] leading-relaxed font-medium text-evergreen/90">
+                                    <p>People Centric Leadership (PCL) exists because too many organisations treat values as a tick-box exercise, without credible evidence.</p>
+                                    <p>We listen to what people truly value, share what they tell us without judgement, and equip leaders.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bottom -->
+                        <div class="bg-evergreen p-6 flex-1 flex gap-4">
+                            <div class="w-1/3">
+                                <h3 class="font-display text-xs text-golden-orange">Our research</h3>
+                            </div>
+                            <div class="w-2/3 flex flex-col gap-3">
+                                <!-- Mini Stat Cards -->
+                                <div class="flex gap-2">
+                                    <div class="flex-1 bg-parchment/10 h-8 rounded-sm border-l-2 border-muted-teal"></div>
+                                    <div class="flex-1 bg-parchment/10 h-8 rounded-sm border-l-2 border-golden-orange"></div>
+                                </div>
+                                <!-- Mini Bar Chart -->
+                                <div class="bg-parchment/5 p-2.5 rounded-sm space-y-2">
+                                    <div class="w-full h-1.5 bg-parchment/10 rounded-full overflow-hidden"><div class="w-[85%] h-full bg-muted-teal"></div></div>
+                                    <div class="w-full h-1.5 bg-parchment/10 rounded-full overflow-hidden"><div class="w-[62%] h-full bg-golden-orange"></div></div>
+                                    <div class="w-full h-1.5 bg-parchment/10 rounded-full overflow-hidden"><div class="w-[45%] h-full bg-parchment/60"></div></div>
+                                </div>
+                                <!-- Mini Graph -->
+                                <div class="bg-parchment/5 h-10 rounded-sm flex items-end gap-1 px-1.5 pb-1">
+                                    <div class="flex-1 bg-muted-teal/50 h-[30%] rounded-t-sm"></div>
+                                    <div class="flex-1 bg-muted-teal/50 h-[50%] rounded-t-sm"></div>
+                                    <div class="flex-1 bg-muted-teal/50 h-[40%] rounded-t-sm"></div>
+                                    <div class="flex-1 bg-muted-teal/50 h-[70%] rounded-t-sm"></div>
+                                    <div class="flex-1 bg-muted-teal h-[60%] rounded-t-sm"></div>
+                                    <div class="flex-1 bg-golden-orange h-[90%] rounded-t-sm"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESENTATION MOCKUPS -->
+    <section class="a4-section p-16 flex flex-col justify-center">
+        <div class="max-w-6xl mx-auto w-full">
+            <h2 class="font-display text-4xl mb-4 text-evergreen">Presentation Mockups</h2>
+            <p class="font-body text-lg text-evergreen/80 mb-8 leading-relaxed max-w-3xl">Example layouts for keynote presentations and research reports, balancing authoritative typography with the core brand palette.</p>
+
+            <div class="bg-gray-200 p-8 rounded-xl shadow-inner grid grid-cols-3 gap-6">
+
+                <div class="aspect-[16/9] w-full overflow-hidden bg-evergreen p-6 flex flex-col justify-center relative shadow-lg">
+                    <h3 class="font-display text-lg text-parchment mb-2 leading-tight">People Centric<br>Leadership.</h3>
+                    <h1 class="font-display text-sm text-muted-teal italic">Evidence that listens.</h1>
+                </div>
+
+                <div class="aspect-[16/9] w-full overflow-hidden bg-evergreen relative p-6 flex flex-col justify-center shadow-lg">
+                    <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/casey-horner-OopzSWabsWE-unsplash.jpg" class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale mix-blend-overlay" alt="Slide Background Texture">
+                    <div class="relative z-10">
+                        <h2 class="font-display text-xl text-parchment leading-tight">Introduction<br>& overview</h2>
+                    </div>
+                </div>
+                <div class="aspect-[16/9] w-full overflow-hidden bg-parchment p-6 shadow-lg flex flex-col">
+                    <div class="border-b border-evergreen/50 pb-2 mb-2 shrink-0">
+                        <h3 class="font-display text-sm text-evergreen font-bold truncate">Lorem ipsum dolor sit amet</h3>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 flex-1 min-h-0">
+                        <div class="col-span-1 font-display italic text-[0.5rem] text-golden-orange leading-snug">
+                            Olor sed voluptate volendist laboribus
+                        </div>
+                        <div class="col-span-2 space-y-1 text-[0.45rem] font-body text-evergreen/80 leading-relaxed overflow-hidden">
+                            <p>Voluptate volendist laboribus voloreriat. Suntis et is nihillo corero quat est, nis is intiumus eum volupta tiisquam quidis dipsa volupta quam quiducia quiasperum aut occusciist, quam endest.</p>
+                            <p>Acillor aturibus is ut venia nis mos magnis quature, videliquias aborepe leseditium quos que voluptates doloria tionseq uatemporrum hit qui omnimpore in et pa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="aspect-[16/9] w-full overflow-hidden bg-muted-teal p-6 shadow-lg text-evergreen flex flex-col">
+                    <div class="border-b border-evergreen/30 pb-2 mb-2 shrink-0">
+                        <h3 class="font-display text-sm font-bold truncate">Lorem ipsum dolor sit amet</h3>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 text-[0.45rem] font-body leading-relaxed flex-1 min-h-0">
+                        <div class="overflow-hidden">
+                            <p class="font-bold mb-1 text-[0.5rem]">Voluptate volendist</p>
+                            <p class="opacity-90 line-clamp-5">Suntis et is nihillo corero quat est, nis is intiumus eum volupta tiisquam quidis dipsa volupta quam quiducia quiasperum aut occusciist.</p>
+                        </div>
+                        <div class="overflow-hidden">
+                            <p class="font-bold mb-1 text-[0.5rem]">Lorem ipsum</p>
+                            <p class="opacity-90 line-clamp-5">Acillor aturibus is ut venia nis mos magnis quature, videliquias aborepe leseditium quos que voluptates doloria tionseq.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="aspect-[16/9] w-full overflow-hidden bg-evergreen p-6 shadow-lg flex flex-col">
+                    <div class="border-b border-parchment/20 pb-2 mb-3 shrink-0">
+                        <h3 class="font-body text-[0.45rem] text-parchment tracking-widest uppercase truncate">Perception Matrix</h3>
+                    </div>
+                    <div class="flex-1 relative w-full border-l border-b border-parchment/30 mt-1 min-h-0">
+                        <svg class="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 100">
+                            <line x1="0" y1="25" x2="100" y2="25" stroke="#EFE9E7" stroke-width="0.5" stroke-opacity="0.2" />
+                            <line x1="0" y1="50" x2="100" y2="50" stroke="#EFE9E7" stroke-width="0.5" stroke-opacity="0.2" />
+                            <line x1="0" y1="75" x2="100" y2="75" stroke="#EFE9E7" stroke-width="0.5" stroke-opacity="0.2" />
+                            <rect x="8" y="50" width="8" height="50" fill="#6BA292" />
+                            <rect x="18" y="30" width="8" height="70" fill="#E59500" />
+                            <rect x="32" y="70" width="8" height="30" fill="#6BA292" />
+                            <rect x="42" y="55" width="8" height="45" fill="#E59500" />
+                            <rect x="56" y="20" width="8" height="80" fill="#6BA292" />
+                            <rect x="66" y="40" width="8" height="60" fill="#E59500" />
+                            <rect x="80" y="60" width="8" height="40" fill="#6BA292" />
+                            <rect x="90" y="75" width="8" height="25" fill="#E59500" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="aspect-[16/9] w-full overflow-hidden relative p-6 flex flex-col justify-center shadow-lg bg-evergreen">
+                    <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_e74p8se74p8se74p.png" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale mix-blend-overlay" alt="Dark Texture">
+                    <div class="relative z-10">
+                        <h2 class="font-display text-xl text-golden-orange leading-tight">Data<br>Insights</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- REPORT MOCKUPS -->
+    <section class="a4-section p-16 flex flex-col justify-center">
+        <div class="max-w-6xl mx-auto w-full">
+            <h2 class="font-display text-4xl mb-8 text-evergreen">Report Mockups</h2>
+
+            <div class="bg-gray-200 p-8 rounded-xl shadow-inner flex flex-row gap-8 justify-center items-center h-[350px]">
+
+                <div class="flex w-1/2 h-full shadow-2xl bg-parchment">
+                    <div class="w-1/2 h-full bg-evergreen relative p-8 flex items-center justify-center overflow-hidden border-r border-evergreen/20">
+                        <svg viewBox="0 0 100 100" class="w-3/4 h-3/4 relative z-10" fill="none" stroke="currentColor">
+                            <circle cx="50" cy="50" r="42" stroke="#EFE9E7" stroke-width="0.5" stroke-dasharray="2 4" />
+                            <circle cx="50" cy="50" r="35" stroke="#6BA292" stroke-width="1" />
+                            <line x1="50" y1="5" x2="50" y2="95" stroke="#EFE9E7" stroke-width="0.5" opacity="0.4" />
+                            <line x1="5" y1="50" x2="95" y2="50" stroke="#EFE9E7" stroke-width="0.5" opacity="0.4" />
+                            <polygon points="50,15 56,44 50,50 44,44" fill="#E59500" />
+                            <polygon points="85,50 56,56 50,50 56,44" fill="#6BA292" />
+                            <polygon points="50,85 44,56 50,50 56,56" fill="#EFE9E7" opacity="0.8" />
+                            <polygon points="15,50 44,44 50,50 44,56" fill="#EFE9E7" opacity="0.3" />
+                            <circle cx="50" cy="50" r="4" fill="#132A13" stroke="#E59500" stroke-width="1"/>
+                        </svg>
+                        <div class="absolute bottom-8 left-4 -rotate-90 origin-bottom-left text-muted-teal font-body text-[0.4rem] tracking-widest uppercase">PCL Insights</div>
+                    </div>
+                    <div class="w-1/2 h-full p-6 flex flex-col justify-center">
+                        <h3 class="font-display text-xl text-evergreen leading-tight mb-4">Connection is not a feeling.<br>It's a discipline.<br><span class="text-golden-orange">We help leaders build it.</span></h3>
+                        <div class="font-body text-[0.35rem] text-evergreen/80 leading-relaxed columns-2 gap-3 space-y-2">
+                            <p>Olor sed voluptate volendist laboribus voloreriat. Suntis et is nihillo corero quat est, nis is intiumus eum volupta tiisquam quidis dipsa volupta quam quiducia quiasperum aut occusciist, quam endest, nonsequ iatur?</p>
+                            <p>Ihitati berorep elenisit a lur, aut est voluptiberum re, untiorecum liqui dunda si quamustrum, ute eume porepudis accatur latur.</p>
+                            <p>Acillor aturibus is ut venia nis mos magnis quature, videliquias aborepe leseditium quos que voluptates doloria tionseq uatemporrum hit qui omnimpore.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex w-1/2 h-full shadow-2xl bg-parchment">
+                    <div class="w-1/2 h-full relative flex items-center justify-center overflow-hidden border-r border-evergreen/20">
+                        <div class="absolute inset-0 flex flex-col">
+                            <div class="h-[45%] bg-muted-teal"></div>
+                            <div class="h-[55%] relative overflow-hidden bg-evergreen">
+                                <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_oviqmtoviqmtoviq.png" alt="People talking" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-evergreen/80 mix-blend-multiply"></div>
+                                <div class="absolute inset-0 bg-evergreen/60"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-1/2 h-full p-6 flex flex-col justify-center">
+                        <h3 class="font-display text-lg text-evergreen leading-tight mb-4">The gap between leaders and people is smaller than you think.<br><span class="text-muted-teal">We measure it.</span></h3>
+                        <div class="font-body text-[0.35rem] text-evergreen/80 leading-relaxed columns-2 gap-3 space-y-2">
+                            <p>Olor sed voluptate volendist laboribus voloreriat. Suntis et is nihillo corero quat est, nis is intiumus eum volupta tiisquam quidis dipsa volupta quam quiducia quiasperum aut occusciist, quam endest.</p>
+                            <p>Acillor aturibus is ut venia nis mos magnis quature, videliquias aborepe leseditium quos que voluptates doloria tionseq uatemporrum hit qui omnimpore, in et pa delles renim autem ipsunt atur?</p>
+                            <p>Imil et odi volut fugit, que quam vent laut laceate imporruntiores nonsed mosaper ferior ma soluptur sitium aut eost, volessita quis sinctis iuria quo ommoles tioreri tionest oreriam eossitiatur?</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- BUSINESS CARDS -->
+    <section class="a4-section p-16 flex flex-col justify-center">
+        <div class="max-w-6xl mx-auto w-full">
+            <h2 class="font-display text-4xl mb-8 text-evergreen">Business Card Mockups</h2>
+
+            <div class="bg-gray-200 p-12 rounded-xl shadow-inner flex flex-row gap-12 justify-center items-center h-[350px]">
+
+                <div class="aspect-[1.7/1] h-[200px] shrink-0 bg-evergreen p-8 shadow-2xl flex flex-col justify-center">
+                    <h3 class="font-display text-2xl text-parchment font-bold mb-1">Pamela Doherty</h3>
+                    <p class="font-body text-sm text-parchment/60 mb-4">Chief Executive Officer.</p>
+                    <p class="font-display text-xl text-golden-orange leading-tight">Listening to what people value to build better leaders.</p>
+                </div>
+                <div class="aspect-[1.7/1] h-[200px] shrink-0 bg-parchment p-8 shadow-2xl flex flex-col justify-between">
+                    <div class="flex items-center gap-3">
+                        <img src="https://raw.githubusercontent.com/karolina-afk/Pam-logos/main/Gemini_Generated_Image_ghaohlghaohlghao.png" alt="PCL Logo" class="w-10 h-10 object-contain mix-blend-multiply">
+                        <h2 class="font-display text-xl text-evergreen font-bold tracking-wide leading-tight">People Centric<br>Leadership</h2>
+                    </div>
+
+                    <div class="font-body text-[0.55rem] text-evergreen/90 space-y-1">
+                        <p class="font-bold">The Innovation Hub,</p>
+                        <p>24-40 Insight Road, London W12 9JW</p>
+                        <p class="mt-2"><span class="text-golden-orange font-bold">T:</span> 01234 567890</p>
+                        <p><span class="text-golden-orange font-bold">E:</span> hello@peoplecentric.com</p>
+                        <p class="font-bold mt-1">peoplecentric.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="a4-section bg-evergreen text-parchment flex flex-col justify-center items-center text-center">
+        <p class="font-body text-sm tracking-widest uppercase opacity-50 mb-4">People Centric Leadership</p>
+        <p class="font-display italic opacity-70">Evidence that listens. Leadership that connects.</p>
+    </footer>
+</body>
+</html>
